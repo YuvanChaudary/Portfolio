@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvan Chaudary — Full Stack Developer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav>
+        <div class="nav-logo">yuvan<span>@dev</span>:~$</div>
+        <ul class="nav-links">
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-tag"><span class="dot"></span>Available for SDE-1 roles · 2026</div>
+            <h1 class="hero-name">Yuvan<br><span class="accent">Chaudary</span></h1>
+
+            <!-- FIX 1: t-cmd is a plain text node — JS types into it without touching spans.
+         FIX 7: termOutput starts opacity:0 but falls back to visible if JS fails. -->
+            <div class="hero-terminal">
+                <div class="terminal-line">
+                    <span class="prompt">~$</span>
+                    <span class="t-cmd" id="termCmd"></span>
+                </div>
+                <div id="termOutput" >
+                    <div class="t-output">{</div>
+                    <div class="t-output">&nbsp;&nbsp;"role": <span class="str">"Full Stack Developer"</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"stack": <span class="str">"Python · React · FastAPI ·
+                            Node.js"</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"target": <span class="str">"SDE-1 @ Fintech / AI
+                            Infrastructure"</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"evaluations_per_day": <span class="val">100000</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"status": <span class="str">"building things that scale"</span>
+                    </div>
+                    <div class="t-output">}</div>
+                </div>
+                <div class="terminal-line mt-8">
+                    <span class="prompt">~$</span>
+                    <span class="cursor-blink" id="termCursor"></span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">// view projects</a>
+                <a href="mailto:yuvanchaudary2004@gmail.com" class="btn btn-secondary">// hire me</a>
+                <a href="https://www.linkedin.com/in/yuvanchaudary" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">//
+                    linkedin</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header reveal">
+            <span class="section-num">01.</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+
+            <div class="project-card featured reveal">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-tag">AI · Benchmarking</span>
+                        <div class="project-links">
+                            <!-- FIX 6: update this href once MetaCog Bench repo is public -->
+                            <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">MetaCog Bench</h3>
+                    <p class="project-desc">LLM metacognition benchmark framework evaluating AI models across confidence
+                        calibration, error detection, belief correction, and epistemic state recognition. Exposes
+                        critical failure modes that MMLU and TruthfulQA miss entirely.</p>
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+                        <span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span>
+                        <span class="stack-tag">scikit-learn</span><span class="stack-tag">Docker</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="project-stats">
+                        <div class="stat"><span class="stat-val">100K+</span><span class="stat-label">evals / day</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">O(1)</span><span class="stat-label">space
+                                complexity</span></div>
+                        <div class="stat"><span class="stat-val">O(n)</span><span class="stat-label">time
+                                complexity</span></div>
+                    </div>
+                    <p class="project-desc mb-0">Built adversarial pressure module to detect
+                        sycophantic reversals and evasions. Delivered React dashboard with live calibration curves,
+                        anomaly detection feeds, and composite Metacognition Score.</p>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-meta">
+                    <span class="project-tag amber">Fintech · Payments</span>
+                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Smart-Settle" target="_blank" rel="noopener noreferrer"
+                            class="project-link">GitHub ↗</a></div>
+                </div>
+                <h3 class="project-title">SmartSettle</h3>
+                <p class="project-desc">Fintech payment routing and settlement optimizer with priority and
+                    deadline-aware scheduling. Handles 1,000+ transactions under peak stress with congestion prediction.
+                </p>
+                <div class="project-stats">
+                    <div class="stat"><span class="stat-val">1,000+</span><span class="stat-label">tx under
+                            stress</span></div>
+                    <div class="stat"><span class="stat-val">O(N log N)</span><span class="stat-label">efficiency</span>
+                    </div>
+                </div>
+                <div class="project-stack">
+                    <span class="stack-tag">Node.js</span><span class="stack-tag">TypeScript</span>
+                    <span class="stack-tag">Priority Queues</span><span class="stack-tag">Zod</span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-meta">
+                    <span class="project-tag blue">AI · AgriTech</span>
+                    <div class="project-links">
+                        <!-- FIX 6: update this href once AgriAI repo is public -->
+                        <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+                <h3 class="project-title">AgriAI</h3>
+                <p class="project-desc">Multilingual farmer decision support system integrating OpenWeatherMap, ISRO
+                    Bhuvan, and E-NAM APIs. AI layer for crop risk scoring, subsidy advisory, and policy mapping.</p>
+                <div class="project-stats">
+                    <div class="stat"><span class="stat-val">3</span><span class="stat-label">live APIs</span></div>
+                    <div class="stat"><span class="stat-val">Multi</span><span class="stat-label">lingual</span></div>
+                </div>
+                <div class="project-stack">
+                    <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+                    <span class="stack-tag">PostgreSQL</span><span class="stack-tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-meta">
+                    <span class="project-tag red">HealthTech · Full Stack</span>
+                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Health_pilot" target="_blank" rel="noopener noreferrer"
+                            class="project-link">GitHub ↗</a></div>
+                </div>
+                <h3 class="project-title">HealthPilot</h3>
+                <p class="project-desc">Full-stack digital health companion centralising personal healthcare management
+                    — hospital search, pharmacy finder, medical expense calculator, global health alerts, and digital
+                    report storage.</p>
+                <div class="project-stack">
+                    <span class="stack-tag">React.js</span><span class="stack-tag">Flask</span>
+                    <span class="stack-tag">SQLite</span><span class="stack-tag">CSS</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header reveal">
+            <span class="section-num">02.</span>
+            <h2 class="section-title">Skills</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Languages</div>
+                <div class="skill-list"><span class="skill-pill">Python</span><span
+                        class="skill-pill">JavaScript</span><span class="skill-pill">TypeScript</span><span
+                        class="skill-pill">Java</span><span class="skill-pill">SQL</span><span
+                        class="skill-pill">C</span></div>
+            </div>
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Frontend</div>
+                <div class="skill-list"><span class="skill-pill">React.js</span><span
+                        class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span
+                        class="skill-pill">TypeScript</span></div>
+            </div>
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Backend</div>
+                <div class="skill-list"><span class="skill-pill">FastAPI</span><span
+                        class="skill-pill">Flask</span><span class="skill-pill">Node.js</span><span
+                        class="skill-pill">REST APIs</span><span class="skill-pill">Microservices</span></div>
+            </div>
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Databases</div>
+                <div class="skill-list"><span class="skill-pill">PostgreSQL</span><span
+                        class="skill-pill">MySQL</span><span class="skill-pill">SQLite</span></div>
+            </div>
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Cloud & DevOps</div>
+                <div class="skill-list"><span class="skill-pill">AWS</span><span class="skill-pill">Docker</span><span
+                        class="skill-pill">Git</span><span class="skill-pill">CI/CD</span><span
+                        class="skill-pill">GitHub</span></div>
+            </div>
+            <div class="skill-group reveal">
+                <div class="skill-group-title">Security</div>
+                <div class="skill-list"><span class="skill-pill">Kali Linux</span><span class="skill-pill">Burp
+                        Suite</span><span class="skill-pill">Metasploit</span><span
+                        class="skill-pill">Splunk</span><span class="skill-pill">ELK Stack</span><span
+                        class="skill-pill">Wireshark</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header reveal">
+            <span class="section-num">03.</span>
+            <h2 class="section-title">Experience</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item current reveal">
+                <div class="timeline-date">Mar 2026 — Present</div>
+                <div class="timeline-role">Full Stack Developer Intern</div>
+                <div class="timeline-company">Unified Mentor Pvt. Ltd · Bengaluru, India</div>
+                <ul class="timeline-desc">
+                    <li>Building responsive web applications using React, TypeScript, and FastAPI in a production
+                        environment</li>
+                    <li>Contributing to end-to-end feature delivery including API integration and database design</li>
+                    <li>Applying scalable architecture practices to real client-facing systems</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date">May 2025 — Present</div>
+                <div class="timeline-role">Founder</div>
+                <div class="timeline-company">NetSphere Authority · India</div>
+                <ul class="timeline-desc">
+                    <li>Established a freelance web development venture focused on client acquisition and digital
+                        marketing</li>
+                    <li>Built foundational business operations including service positioning and outreach</li>
+                    <li>Delivering personal projects in React and Flask while developing client pipeline</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date">Sep 2023 — Oct 2027</div>
+                <div class="timeline-role">B.Tech — Computer Science & Engineering</div>
+                <div class="timeline-company">K S School of Engineering and Management · Bengaluru</div>
+                <ul class="timeline-desc">
+                    <li>Relevant coursework: Data Structures, Algorithms, Databases, Computer Networks, Operating
+                        Systems</li>
+                    <li>AWS Academy Cloud Foundations certified</li>
+                    <li>GitHub Featured Project recognition for CommonIntern automation tool</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header reveal">
+            <span class="section-num">04.</span>
+            <h2 class="section-title">Contact</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="reveal">
+                <div class="contact-text">Let's build<br>something<br><span class="accent">that scales.</span></div>
+                <p class="contact-sub">Open to SDE-1 roles at product-based companies, fintech, and AI infrastructure.
+                    Also open to freelance projects and collaborations.</p>
+                <div class="contact-links">
+                    <a href="mailto:yuvanchaudary2004@gmail.com" class="contact-link"><span
+                            class="contact-link-icon">@</span>yuvanchaudary2004@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/yuvanchaudary" target="_blank" rel="noopener noreferrer" class="contact-link"><span
+                            class="contact-link-icon">in</span>linkedin.com/in/yuvanchaudary</a>
+                    <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer" class="contact-link"><span
+                            class="contact-link-icon">&lt;/&gt;</span>github.com/YuvanChaudary</a>
+                </div>
+            </div>
+            <!-- FIX 4: form with validation + mailto fallback -->
+            <div class="reveal">
+                <div class="contact-form">
+                    <div class="form-group"><label class="form-label">// name</label><input type="text"
+                            class="form-input" id="fName" placeholder="Your name"></div>
+                    <div class="form-group"><label class="form-label">// email</label><input type="email"
+                            class="form-input" id="fEmail" placeholder="your@email.com"></div>
+                    <div class="form-group"><label class="form-label">// message</label><textarea class="form-textarea"
+                            id="fMsg" placeholder="Tell me about the role or project..."></textarea></div>
+                    <div class="form-status" id="fStatus"></div>
+                    <button class="btn btn-primary align-self-start" onclick="handleForm()">// send
+                        message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>yuvan@dev:~$ <span class="text-green">built with precision</span></span>
+        <span>© 2026 Yuvan Chaudary</span>
+    </footer>
+
+    <script>
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        let cursorRing = null;
+
+        // FIX 3: animateRing at top-level scope, not buried inside another if block
+        function animateRing() {
+            if (cursorRing) {
+                rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+                cursorRing.style.left = rx + 'px'; cursorRing.style.top = ry + 'px';
+            }
+            requestAnimationFrame(animateRing);
+        }
+        requestAnimationFrame(animateRing);
+
+        // FIX 5: only activate custom cursor on real pointer/hover devices (not mobile)
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            const cursor = document.getElementById('cursor');
+            const ring = document.getElementById('cursorRing');
+            if (cursor && ring) {
+                cursorRing = ring;
+                cursor.style.display = 'block';
+                ring.style.display = 'block';
+                document.addEventListener('mousemove', e => {
+                    mx = e.clientX; my = e.clientY;
+                    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+                });
+                document.querySelectorAll('a, button, .skill-pill').forEach(el => {
+                    el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.borderColor = 'rgba(0,255,136,0.6)'; });
+                    el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(0,255,136,0.4)'; });
+                });
+            }
+        }
+
+        // Scroll reveal
+        if (window.IntersectionObserver) {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+
+        // FIX 1 & 7: typing effect only writes to #termCmd plain text node.
+        // Colored span output in #termOutput is never touched by JS.
+        // FIX 7: if JS fails at any point, catch block makes output visible immediately.
+        (async function playTerminal() {
+            const cmdEl = document.getElementById('termCmd');
+            const outputEl = document.getElementById('termOutput');
+            const blinkEl = document.getElementById('termCursor');
+            if (!cmdEl || !outputEl) return;
+            outputEl.style.opacity = '0';
+            try {
+                cmdEl.textContent = '';
+                await sleep(400);
+                for (const ch of 'cat profile.json') { cmdEl.textContent += ch; await sleep(42); }
+                await sleep(200);
+                outputEl.style.opacity = '1';
+                if (blinkEl) blinkEl.style.display = 'inline-block';
+            } catch (_) {
+                outputEl.style.opacity = '1';
+                if (blinkEl) blinkEl.style.display = 'inline-block';
+            }
+        })();
+
+        // FIX 4: validated form with mailto fallback
+        function handleForm() {
+            const name = document.getElementById('fName').value.trim();
+            const email = document.getElementById('fEmail').value.trim();
+            const msg = document.getElementById('fMsg').value.trim();
+            const status = document.getElementById('fStatus');
+            if (!name || !email || !msg) {
+                status.textContent = '// error: all fields are required'; status.className = 'form-status error'; return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                status.textContent = '// error: invalid email address'; status.className = 'form-status error'; return;
+            }
+            const sub = encodeURIComponent('Portfolio contact from ' + name);
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
+            window.location.href = 'mailto:yuvanchaudary2004@gmail.com?subject=' + sub + '&body=' + body;
+            status.textContent = '// opening your mail client...'; status.className = 'form-status success';
+        }
+    </script>
+</body>
+
+</html>
+
