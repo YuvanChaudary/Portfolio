@@ -1,37 +1,63 @@
-# Yuvan Chaudary's Portfolio
+# Yuvan Chaudary — Systems & SDE-1 Portfolio (Google-Recruiter Optimized)
 
-A clean, responsive, and performance-optimized personal portfolio for Yuvan Chaudary, showing experience as a Full Stack Developer, projects, and a professional skill set.
+A high-performance, responsive developer portfolio showcasing engineering depth in **Distributed Systems, Agentic AI, Constraint Satisfaction Solvers, and Financial Sagas**. Optimized specifically for technical recruiters and hiring managers at Google, product companies, and AI infrastructure teams.
 
-## Features
-- **Dynamic Terminal Effect**: Shows a sleek, typed-out loading animation.
-- **Custom Cursor & Interactions**: Features an adaptive and stylized mouse cursor that expands and highlights interactable elements. Disables gracefully on touch devices.
-- **Scroll Reveal Animations**: Sections fade and slide in smoothly as the user browses down the page using `IntersectionObserver`.
-- **Responsive Layout**: Designed mobile-first, adapting flawlessly to both small touch screens and large displays.
-- **Contact Form Handlers**: Dynamically hooks into the user's local email client, pre-filling contact inputs. 
-- **Security-First**: Enforces safe window opening policies via `noopener noreferrer` on target blank outgoing URLs.
+---
 
-## How to Run
+## 🚀 Key Engineering & Architecture Highlights
 
-Because this project relies entirely on modern vanilla web standards, it requires zero dependencies to view.
+- **Interactive System Design Modals**: Detailed architectural flow pipelines, ASCII data diagrams, Big-O complexity analysis, and invariant verification specs for flagship systems (*Client Flow*, *Placement Week Scheduler*, *RecoverAI*, *MetaCog Bench*).
+- **Sub-Second Solvers**: Highlights real algorithms like 144-bit bitmask occupancy registries achieving `<0.32s` full convergence for 800-student combinatorial scheduling.
+- **Financial & AI Invariants**: Documents strict invariants (`ACTION_EXECUTED ≠ RECOVERED`, OPA Rego policy guardrails, immudb cryptographic ledgers).
+- **Recruiter Fast-Scan Metrics Ribbon**: Live animated telemetry counters highlighting real scale numbers:
+  - `100K+` Evals / Day (MetaCog Benchmark)
+  - `<0.32s` CSP Solve Time (800 Students × 35 Companies)
+  - `144-bit` Bitmask Occupancy Feasibility Checks
+  - `₹2.52Cr` Simulated Autonomous Revenue Recovery (RecoverAI Razorpay)
+  - `127+` Production Unit & Temporal Workflow Tests
+  - `O(1)` Streaming Space Complexity Bound
 
-1. **Directly Applaud**: Simply double-click `portfolio.html` to open it natively in your default browser (Chrome, Edge, Firefox, Safari).
-2. **Local Development Server**: To avoid CORS policies when injecting external assets in the future, serve the folder through a server like **VS Code Live Server** or using Python's built-in http daemon:
+---
+
+## 🎨 Visual & UX/UI System
+
+- **Design System**: Deep obsidian aesthetic (`#06090e`), cyber emerald accents (`#00ff9d`), Google Blue (`#38bdf8` / `#4285f4`), amber, and violet highlights.
+- **Glassmorphism & Micro-Interactions**: Multi-layered backdrop blurs (`backdrop-filter: blur(16px)`), specular gradient borders, and hover elevation physics.
+- **Dynamic Particles Constellation**: 60fps HTML5 Canvas particle physics engine with proximity-based line connections and low-CPU cursor repulsion.
+- **Interactive Multi-Tab Terminal**: Live terminal switcher (`sys-info.sh`, `metrics.json`, `google-fit.ts`) with syntax coloring and dynamic typewriter text.
+- **Instant Project Filtering**: Interactive filter tabs (`All`, `Agentic AI & ML`, `Fintech & Distributed`, `Algorithms & Performance`, `Full Stack`).
+- **Recruiter Fast-Track**: Click-to-copy email with toast notification, pre-filled recruiter contact templates, and direct links.
+
+---
+
+## 🛠️ How to Run Locally
+
+This project relies on modern vanilla web standards with zero build tool dependencies:
+
+1. **Direct Browser Execution**:
+   Simply open `index.html` in any modern web browser (Chrome, Brave, Edge, Safari, Firefox).
+
+2. **Local HTTP Server**:
    ```bash
-   python -m http.server 8000
+   python -m http.server 3001
    ```
-   *Then access `http://localhost:8000/portfolio.html`.*
+   *Then navigate to `http://localhost:3001/index.html`.*
 
-## Technologies Used
-- **HTML5:** Core page structure and semantics.
-- **CSS3 / Variables:** Custom variables layout (`--bg`, `--green`, `--text-muted`), responsive grid, media-queries, typography.
-- **Vanilla JavaScript:** DOM manipulations, IntersectionObservers (scroll reveals), async typing scripts, cursor events.
+---
 
-## Directory Structure
-- `portfolio.html`: The main page template housing the layout structure and script behavior.
-- `style.css`: Extracted styles that unify the aesthetic, animations, and custom utility classes.
-- `fix_portfolio.py`: Auto-generation/refactoring script created during a debugging phase to format and extract CSS correctly.
+## 📁 Repository Structure
 
-## Find me online
-- **Email:** yuvanchaudary2004@gmail.com
-- **LinkedIn:** [linkedin.com/in/yuvanchaudary](https://www.linkedin.com/in/yuvanchaudary)
-- **GitHub:** [github.com/YuvanChaudary](https://github.com/YuvanChaudary)
+```
+├── index.html        # Main portfolio template, semantic sections & interactive logic
+├── style.css         # Complete glassmorphism design system & responsive rules
+└── README.md         # Architecture, features, and setup documentation
+```
+
+---
+
+## 🌐 Find Yuvan Online
+
+- **Email**: [yuvanchaudary2004@gmail.com](mailto:yuvanchaudary2004@gmail.com)
+- **Phone**: [+91 8722451693](tel:+918722451693)
+- **LinkedIn**: [linkedin.com/in/yuvan-chaudary](https://www.linkedin.com/in/yuvan-chaudary/)
+- **GitHub**: [github.com/YuvanChaudary](https://github.com/YuvanChaudary)

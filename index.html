@@ -4,553 +4,1578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yuvan Chaudary - Full Stack SDE with expertise in AI, Fintech & Performance Optimization. 100K+ evals/day, O(1) space complexity.">
-    <meta name="keywords" content="Full Stack Developer, SDE-1, Python, React, FastAPI, AI, Fintech">
-    <title>Yuvan Chaudary — Full Stack SDE | AI · Fintech · Performance</title>
+    <meta name="description"
+        content="Yuvan Chaudary — Full Stack SDE specializing in Agentic AI, Distributed Systems, High-Throughput Benchmarks (100K+ evals/day), and Algorithmic Optimization. Built for Google scale.">
+    <meta name="keywords"
+        content="Yuvan Chaudary, Google SDE, Full Stack Developer, Software Engineer, Python, FastAPI, React, Temporal, OPA, Distributed Systems, Agentic AI, Algorithms">
+    <meta name="author" content="Yuvan Chaudary">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Yuvan Chaudary — Full Stack SDE | AI · Distributed Systems · Performance">
+    <meta property="og:description"
+        content="Building high-throughput, deterministic systems where performance and correctness are non-negotiable. 100K+ evals/day, <0.32s solvers, O(1) space complexity.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/162781813?v=4">
+
+    <title>Yuvan Chaudary — Full Stack SDE | Systems · AI · Performance</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Interactive Ambient Canvas & Background Grid -->
+    <canvas id="bgCanvas"></canvas>
+    <div class="ambient-grid"></div>
+    <div class="ambient-vignette"></div>
+
+    <!-- Custom Cursor & Magnetic Ring -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <nav>
-        <div class="nav-logo">yuvan<span>@dev</span>:~$</div>
-        <ul class="nav-links">
-            <li><a href="#projects">projects</a></li>
-            <li><a href="#skills">skills</a></li>
-            <li><a href="#experience">experience</a></li>
-            <li><a href="#contact">contact</a></li>
-        </ul>
-    </nav>
+    <!-- Floating Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
+    <!-- ==========================================================================
+         NAVIGATION BAR
+         ========================================================================== -->
+    <header>
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <div class="nav-logo">
+                    <span class="prompt">yuvan@google-ready</span>:~$
+                    <span class="tag">// sde-1</span>
+                </div>
+            </a>
+
+            <div class="recruiter-pill">
+                <span class="pulse-dot"></span>
+                <span>OPEN FOR SDE-1 / SWE ROLES</span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#projects">// projects</a></li>
+                <li><a href="#skills">// skills</a></li>
+                <li><a href="#experience">// experience</a></li>
+                <li><a href="#contact">// contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn-nav-resume" id="copyEmailNavBtn" title="Copy Email">
+                    <span>📋</span>
+                    <span>Copy Email</span>
+                </button>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.72rem;">
+                    // hire me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         HERO SECTION (DUAL-COLUMN ARCHITECTURE)
+         ========================================================================== -->
     <section id="hero">
-        <div class="hero-grid-bg"></div>
-        <div class="hero-glow"></div>
-        <div class="hero-content">
-            <div class="profile-section reveal">
-                <img src="https://avatars.githubusercontent.com/u/162781813?v=4" alt="Yuvan Chaudary" class="profile-photo">
-            </div>
-            <div class="hero-tag"><span class="dot"></span>SDE-1 | Fintech · AI Infrastructure · Systems</div>
-            <h1 class="hero-name">Yuvan<br><span class="accent">Chaudary</span></h1>
+        <div class="hero-wrapper">
+            <!-- Left Column: Elevator Pitch & Command Headline -->
+            <div class="hero-left reveal">
+                <div class="hero-status-tag">
+                    <span class="pulse-dot"></span>
+                    <span>Full Stack SDE · Distributed Systems · Agentic AI</span>
+                </div>
 
-            <div class="hero-terminal">
-                <div class="terminal-line">
-                    <span class="prompt">~$</span>
-                    <span class="t-cmd" id="termCmd"></span>
-                </div>
-                <div id="termOutput">
-                    <div class="t-output">{</div>
-                    <div class="t-output">&nbsp;&nbsp;"role": <span class="str">"Full Stack SDE"</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"stack": <span class="str">"Python · React · FastAPI · Node.js · PostgreSQL"</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"focus": <span class="str">"AI/ML · Fintech · Distributed Systems"</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"throughput": <span class="val">100K+ evals/day</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"systems": <span class="str">"Agentic AI · Payment Orchestration · Scheduling"</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"status": <span class="str">"building production systems at scale"</span></div>
-                    <div class="t-output">}</div>
-                </div>
-                <div class="terminal-line mt-8">
-                    <span class="prompt">~$</span>
-                    <span class="cursor-blink" id="termCursor"></span>
-                </div>
-            </div>
+                <h1 class="hero-name">
+                    Yuvan <span class="shimmer">Chaudary</span>
+                </h1>
 
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">// view projects</a>
-                <a href="mailto:yuvanchaudary2004@gmail.com" class="btn btn-secondary">// hire me</a>
-                <a href="https://www.linkedin.com/in/yuvanchaudary" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-secondary">// linkedin</a>
-            </div>
-        </div>
-    </section>
+                <!-- Dynamic Typewriter Subtitle -->
+                <div class="hero-dynamic-role">
+                    <span class="prompt-sym">&gt;</span>
+                    <span id="typewriterText">Full Stack SDE</span>
+                    <span class="typing-cursor"></span>
+                </div>
 
-    <section id="projects">
-        <div class="section-header reveal">
-            <span class="section-num">01.</span>
-            <h2 class="section-title">Projects</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="projects-grid">
-
-            <!-- NEW: Client Flow — Agentic AI -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Agentic AI · Production</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/Client_flow_project" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Client Flow</h3>
-                    <p class="project-desc">Agentic AI platform for proactive customer intelligence. Detects intent, plans actions, and executes integrations across CRM, Jira, ServiceNow, and finance systems. Production-grade agent orchestration with audit trails and safety guardrails.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">TypeScript</span><span class="stack-tag">React</span>
-                        <span class="stack-tag">Node.js</span><span class="stack-tag">Agentic AI</span><span class="stack-tag">Tool Adapters</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">Intent</span><span class="stat-label">Planner Executor</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">Multi</span><span class="stat-label">Integration CRM</span></div>
-                        <div class="stat"><span class="stat-val">100%</span><span class="stat-label">Audit Trail</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Separation of concerns: Intent → Plan → Execute → Validate → Audit. Real integrations with CRM, Jira, ServiceNow. Testable agent logic with E2E tests and demonstration UI for stakeholder walkthroughs.</p>
-                </div>
-            </div>
-
-            <!-- NEW: Placement Week Scheduler -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Systems · Algorithms</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/The-Placement-Week-Scheduler" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Placement Week Scheduler</h3>
-                    <p class="project-desc">Production-grade constraint satisfaction engine for 800 students × 35 companies scheduling across 20 rooms over 4 days. Real-time disruption replanning with zero double-bookings guaranteed. 144-bit bitmask occupancy registry with local-repair algorithms.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
-                        <span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Algorithms</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">&lt;0.32s</span><span class="stat-label">scheduling</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">&lt;100ms</span><span class="stat-label">replanning</span></div>
-                        <div class="stat"><span class="stat-val">12/12</span><span class="stat-label">chaos tests</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Bitwise AND feasibility checks, priority-greedy allocation, 5-phase local repair. Handles 4 disruption types (delays, dropouts, withdrawals, room failures). Version-controlled schedules with full audit trails and zero-risk rollback.</p>
-                </div>
-            </div>
-
-            <!-- NEW: RecoverAI — Autonomous Revenue Recovery -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Fintech · Autonomous</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/RecoverAI_Razor_pay" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">RecoverAI</h3>
-                    <p class="project-desc">Autonomous revenue recovery platform with governed AI agents. Diagnoses payment failures, formulates AI recovery strategies, enforces OPA Rego policy guardrails, orchestrates durable workflows via Temporal, and settles via cryptographic audit ledger (immudb). Zero double-recovery guarantee.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
-                        <span class="stack-tag">React</span><span class="stack-tag">Temporal</span><span class="stack-tag">OPA Rego</span><span class="stack-tag">immudb</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">127</span><span class="stat-label">unit tests</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">19</span><span class="stat-label">integration</span></div>
-                        <div class="stat"><span class="stat-val">₹2.52Cr</span><span class="stat-label">simulated</span></div>
-                    </div>
-                    <p class="project-desc mb-0">AI Strategy Advisor + OPA Firewall + Temporal Saga Orchestration + immudb Ledger. Razorpay AI Buildathon submission. 6-category failure taxonomy with dynamic recovery proposals. ACTION_EXECUTED ≠ RECOVERED financial invariant enforced.</p>
-                </div>
-            </div>
-
-            <!-- ENHANCED: MetaCog Bench -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">AI · Benchmarking</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/MetaCog-BenchMark-Kaggle-Competition" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">MetaCog Bench</h3>
-                    <p class="project-desc">LLM metacognition benchmark framework evaluating AI models across confidence calibration, error detection, belief correction, and epistemic state recognition. Exposes critical failure modes that MMLU and TruthfulQA miss entirely.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
-                        <span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">scikit-learn</span><span class="stack-tag">Docker</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">100K+</span><span class="stat-label">evals / day</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">O(1)</span><span class="stat-label">space
-                                complexity</span></div>
-                        <div class="stat"><span class="stat-val">O(n)</span><span class="stat-label">time
-                                complexity</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Adversarial pressure module detects sycophantic reversals and evasions. React dashboard with live calibration curves, anomaly detection feeds, and composite Metacognition Score. Kaggle competition-ready evaluation framework.</p>
-                </div>
-            </div>
-
-            <!-- ENHANCED: AetherFlow AI -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Frontend · Performance</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/Aether-Flow-AI" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">AetherFlow AI Landing</h3>
-                    <p class="project-desc">Production-grade landing page for autonomous AI-driven data automation platform. Optimized for conversion with pixel-perfect performance and full SEO compliance.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">TypeScript</span><span class="stack-tag">React</span>
-                        <span class="stack-tag">Web Vitals</span><span class="stack-tag">SEO</span><span class="stack-tag">Analytics</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">&lt;1.5s</span><span class="stat-label">TTI</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">&lt;0.1</span><span class="stat-label">CLS</span></div>
-                        <div class="stat"><span class="stat-val">100/100</span><span class="stat-label">Lighthouse</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Code splitting, lazy loading, image optimization, critical rendering path. 100 Lighthouse score across all metrics. Production deployment on Vercel with zero performance regressions.</p>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag blue">AI · Recruitment</span>
-                    <div class="project-links"><a href="https://github.com/YuvanChaudary/redrob-candidate-ranker" target="_blank"
-                            rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                </div>
-                <h3 class="project-title">RedRob Candidate Ranker</h3>
-                <p class="project-desc">Intelligent candidate ranking system leveraging ML to analyze and score candidate profiles. Streamlines recruitment workflows and enhances hiring decision-making.
+                <p class="hero-bio">
+                    Building high-throughput, deterministic software where <strong>performance, algorithmic correctness,
+                        and scale</strong> are non-negotiable. Experienced in orchestrating <strong>governed AI agents</strong>,
+                    authoring <strong>constraint satisfaction solvers</strong> with sub-second convergence, and enforcing
+                    zero-leakage financial invariants.
                 </p>
-                <div class="project-stats">
-                    <div class="stat"><span class="stat-val">98%</span><span class="stat-label">prediction accuracy</span></div>
-                    <div class="stat"><span class="stat-val">50x</span><span class="stat-label">faster eval</span>
-                    </div>
-                </div>
-                <div class="project-stack">
-                    <span class="stack-tag">Python</span><span class="stack-tag">scikit-learn</span>
-                    <span class="stack-tag">XGBoost</span><span class="stack-tag">FastAPI</span>
-                </div>
-            </div>
 
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag amber">Fintech · Payments</span>
-                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Smart-Settle" target="_blank"
-                            rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                </div>
-                <h3 class="project-title">SmartSettle</h3>
-                <p class="project-desc">Fintech payment routing and settlement optimizer with priority and deadline-aware scheduling. Real-time congestion prediction using ML models and adaptive queue management.
-                </p>
-                <div class="project-stats">
-                    <div class="stat"><span class="stat-val">1K+</span><span class="stat-label">tx/sec peak</span></div>
-                    <div class="stat"><span class="stat-val">O(N log N)</span><span class="stat-label">efficiency</span>
-                    </div>
-                </div>
-                <div class="project-stack">
-                    <span class="stack-tag">Node.js</span><span class="stack-tag">TypeScript</span>
-                    <span class="stack-tag">Priority Queues</span><span class="stack-tag">Redis</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag red">Vehicle Rental · Full Stack</span>
-                    <div class="project-links">
-                        <a href="https://github.com/YuvanChaudary/Rent-Go-Vehicle-Rental-Management-System-" target="_blank" rel="noopener noreferrer"
-                            class="project-link">GitHub ↗</a>
-                    </div>
-                </div>
-                <h3 class="project-title">Rent-Go Vehicle Rental System</h3>
-                <p class="project-desc">Comprehensive vehicle rental management platform with end-to-end booking, inventory, and payment management. Designed for scalability and real-world rental operations.
-                </p>
-                <div class="project-stats">
-                    <div class="stat"><span class="stat-val">Full</span><span class="stat-label">stack solution</span></div>
-                    <div class="stat"><span class="stat-val">Scalable</span><span class="stat-label">architecture</span>
-                    </div>
-                </div>
-                <div class="project-stack">
-                    <span class="stack-tag">TypeScript</span><span class="stack-tag">React</span>
-                    <span class="stack-tag">Node.js</span><span class="stack-tag">PostgreSQL</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag blue">AI · AgriTech</span>
-                    <div class="project-links">
-                        <a href="https://github.com/YuvanChaudary/Agri-AI-Project" target="_blank" rel="noopener noreferrer"
-                            class="project-link">GitHub ↗</a>
-                    </div>
-                </div>
-                <h3 class="project-title">AgriAI</h3>
-                <p class="project-desc">Multilingual farmer decision support system integrating OpenWeatherMap, ISRO Bhuvan, and E-NAM APIs. AI layer for crop risk scoring, subsidy advisory, and policy mapping.</p>
-                <div class="project-stats">
-                    <div class="stat"><span class="stat-val">3</span><span class="stat-label">live APIs</span></div>
-                    <div class="stat"><span class="stat-val">Multi</span><span class="stat-label">lingual</span></div>
-                </div>
-                <div class="project-stack">
-                    <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
-                    <span class="stack-tag">PostgreSQL</span><span class="stack-tag">Docker</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag amber">Cybersecurity · Full Stack</span>
-                    <div class="project-links"><a href="https://github.com/YuvanChaudary/secure-note" target="_blank"
-                            rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                </div>
-                <h3 class="project-title">SecureNote</h3>
-                <p class="project-desc">Cybersecurity-focused note platform combining client-side encrypted note workflows with threat monitoring, anomaly scoring, and real-time WebSocket security alerts.</p>
-                <div class="project-stack">
-                    <span class="stack-tag">React</span><span class="stack-tag">FastAPI</span>
-                    <span class="stack-tag">AES-256</span><span class="stack-tag">WebSocket</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag red">HealthTech · Full Stack</span>
-                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Health_pilot" target="_blank"
-                            rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                </div>
-                <h3 class="project-title">HealthPilot</h3>
-                <p class="project-desc">Full-stack digital health companion centralising personal healthcare management
-                    — hospital search, pharmacy finder, medical expense calculator, global health alerts.
-                </p>
-                <div class="project-stack">
-                    <span class="stack-tag">React.js</span><span class="stack-tag">Flask</span>
-                    <span class="stack-tag">SQLite</span><span class="stack-tag">CSS</span>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-meta">
-                    <span class="project-tag blue">AI · Customer Support</span>
-                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Customer-Support-RAG-System"
-                            target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                </div>
-                <h3 class="project-title">Customer Support RAG System</h3>
-                <p class="project-desc">AI-powered system featuring a LangChain-driven RAG pipeline backed by Pinecone.
-                    Includes local Whisper audio transcription and proactive PII masking.</p>
-                <div class="project-stack">
-                    <span class="stack-tag">React</span><span class="stack-tag">FastAPI</span>
-                    <span class="stack-tag">LangChain</span><span class="stack-tag">Pinecone</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="section-header reveal">
-            <span class="section-num">02.</span>
-            <h2 class="section-title">Skills</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="skills-container">
-            <div class="skill-group reveal">
-                <div class="skill-group-title">Languages</div>
-                <div class="skill-list"><span class="skill-pill">Python</span><span
-                        class="skill-pill">JavaScript</span><span class="skill-pill">TypeScript</span><span
-                        class="skill-pill">Java</span><span class="skill-pill">SQL</span><span
-                        class="skill-pill">Rust</span></div>
-            </div>
-            <div class="skill-group reveal">
-                <div class="skill-group-title">Frontend</div>
-                <div class="skill-list"><span class="skill-pill">React.js</span><span
-                        class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span
-                        class="skill-pill">TypeScript</span><span class="skill-pill">Next.js</span></div>
-            </div>
-            <div class="skill-group reveal">
-                <div class="skill-group-title">Backend</div>
-                <div class="skill-list"><span class="skill-pill">FastAPI</span><span
-                        class="skill-pill">Flask</span><span class="skill-pill">Node.js</span><span
-                        class="skill-pill">REST APIs</span><span class="skill-pill">gRPC</span></div>
-            </div>
-            <div class="skill-group reveal">
-                <div class="skill-group-title">Databases & Data</div>
-                <div class="skill-list"><span class="skill-pill">PostgreSQL</span><span
-                        class="skill-pill">MySQL</span><span class="skill-pill">Redis</span><span
-                        class="skill-pill">MongoDB</span><span class="skill-pill">Kafka</span></div>
-            </div>
-            <div class="skill-group reveal">
-                <div class="skill-group-title">Cloud & DevOps</div>
-                <div class="skill-list"><span class="skill-pill">AWS</span><span class="skill-pill">Docker</span><span
-                        class="skill-pill">Kubernetes</span><span class="skill-pill">CI/CD</span><span
-                        class="skill-pill">GitHub Actions</span></div>
-            </div>
-            <div class="skill-group reveal">
-                <div class="skill-group-title">AI/ML & Systems</div>
-                <div class="skill-list"><span class="skill-pill">LLMs</span><span class="skill-pill">Agentic AI</span><span class="skill-pill">scikit-learn</span><span
-                        class="skill-pill">Temporal</span><span class="skill-pill">OPA</span><span class="skill-pill">Algorithms</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <div class="section-header reveal">
-            <span class="section-num">03.</span>
-            <h2 class="section-title">Experience</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item current reveal">
-                <div class="timeline-date">Mar 2026 — Present</div>
-                <div class="timeline-role">Full Stack Developer Intern</div>
-                <div class="timeline-company">Unified Mentor Pvt. Ltd · Bengaluru, India</div>
-                <ul class="timeline-desc">
-                    <li>Built responsive web applications using React, TypeScript, and FastAPI in production environment</li>
-                    <li>Contributed to end-to-end feature delivery including API integration, database design, and deployment</li>
-                    <li>Implemented scalable architecture patterns and database optimization techniques</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-date">May 2025 — Present</div>
-                <div class="timeline-role">Founder</div>
-                <div class="timeline-company">NetSphere Authority · India</div>
-                <ul class="timeline-desc">
-                    <li>Established freelance web development venture with focus on client acquisition and digital marketing</li>
-                    <li>Delivered production-ready applications in React and Flask for enterprise clients</li>
-                    <li>Built comprehensive service offerings including API development, database design, and deployment</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-date">Sep 2023 — Oct 2027</div>
-                <div class="timeline-role">B.Tech — Computer Science & Engineering</div>
-                <div class="timeline-company">K S School of Engineering and Management · Bengaluru</div>
-                <ul class="timeline-desc">
-                    <li>Relevant coursework: Data Structures, Algorithms, Databases, Computer Networks, Operating Systems, Distributed Systems</li>
-                    <li>AWS Academy Cloud Foundations certified | AWS Solutions Architect Associate preparing</li>
-                    <li>GitHub Featured Project recognition for infrastructure automation tools</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="section-header reveal">
-            <span class="section-num">04.</span>
-            <h2 class="section-title">Contact</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="contact-grid">
-            <div class="reveal">
-                <div class="contact-text">Let's build<br>something<br><span class="accent">that scales.</span></div>
-                <p class="contact-sub">SDE-1 roles at product companies, fintech, and AI infrastructure are my focus. Open to challenging technical projects and collaborations that push the boundaries of system design and performance.</p>
-                <div class="contact-links">
-                    <a href="mailto:yuvanchaudary2004@gmail.com" class="contact-link"><span
-                            class="contact-link-icon">@</span>yuvanchaudary2004@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/yuvan-chaudary/" target="_blank" rel="noopener noreferrer"
-                        class="contact-link"><span class="contact-link-icon">in</span>linkedin.com/in/yuvanchaudary</a>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>⚡ Explore Systems</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>✉️ Recruiter Fast Connect</span>
+                    </a>
                     <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
-                        class="contact-link"><span
-                            class="contact-link-icon">&lt;/&gt;</span>github.com/YuvanChaudary</a>
+                        class="btn btn-outline">
+                        <span>&lt;/&gt; GitHub ↗</span>
+                    </a>
                 </div>
             </div>
-            <div class="reveal">
-                <div class="contact-form">
-                    <div class="form-group"><label class="form-label">// name</label><input type="text"
-                            class="form-input" id="fName" placeholder="Your name"></div>
-                    <div class="form-group"><label class="form-label">// email</label><input type="email"
-                            class="form-input" id="fEmail" placeholder="your@email.com"></div>
-                    <div class="form-group"><label class="form-label">// message</label><textarea class="form-textarea"
-                            id="fMsg" placeholder="Tell me about the role or project..."></textarea></div>
-                    <div class="form-status" id="fStatus"></div>
-                    <button class="btn btn-primary align-self-start" onclick="handleForm()">// send
-                        message</button>
+
+            <!-- Right Column: Avatar & Interactive Developer Terminal -->
+            <div class="hero-right reveal">
+                <!-- Avatar Card with Rotating Orbital Ring -->
+                <div class="avatar-badge-card">
+                    <div class="avatar-wrapper">
+                        <img src="https://avatars.githubusercontent.com/u/162781813?v=4" alt="Yuvan Chaudary"
+                            class="avatar-img">
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="avatar-info">
+                        <div class="avatar-name">Yuvan Chaudary</div>
+                        <div class="avatar-sub">B.E. CSE (2027, 7.97 CGPA) · Java Dev @ Codec | Web Dev @ PujaAtHome</div>
+                        <div class="avatar-status-pill">
+                            <span class="pulse-dot"></span>
+                            <span>Bengaluru, India · Ready for Relocation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Multi-Tab Terminal -->
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                        </div>
+                        <div class="terminal-tabs">
+                            <button class="term-tab active" data-tab="sysinfo">sys-info.sh</button>
+                            <button class="term-tab" data-tab="metrics">metrics.json</button>
+                            <button class="term-tab" data-tab="googlefit">google-fit.ts</button>
+                        </div>
+                    </div>
+
+                    <div class="terminal-body">
+                        <!-- Tab 1: sys-info.sh -->
+                        <div class="terminal-code active" id="tab-sysinfo">
+                            <div class="code-line"><span class="line-num">01</span><span class="code-content"><span class="code-comment">#!/usr/bin/env bash</span></span></div>
+                            <div class="code-line"><span class="line-num">02</span><span class="code-content"><span class="code-keyword">export</span> CANDIDATE=<span class="code-str">"Yuvan Chaudary"</span></span></div>
+                            <div class="code-line"><span class="line-num">03</span><span class="code-content"><span class="code-keyword">export</span> TARGET_ROLE=<span class="code-str">"Software Development Engineer (SDE-1)"</span></span></div>
+                            <div class="code-line"><span class="line-num">04</span><span class="code-content"><span class="code-keyword">export</span> CORE_STACK=(<span class="code-str">"Python"</span> <span class="code-str">"Java"</span> <span class="code-str">"FastAPI"</span> <span class="code-str">"TypeScript"</span> <span class="code-str">"React"</span> <span class="code-str">"PostgreSQL"</span> <span class="code-str">"Temporal"</span>)</span></div>
+                            <div class="code-line"><span class="line-num">05</span><span class="code-content"><span class="code-keyword">export</span> PASSION=<span class="code-str">"Agentic AI, Distributed Sagas &amp; Bitwise Solvers"</span></span></div>
+                            <div class="code-line"><span class="line-num">06</span><span class="code-content"><span class="code-keyword">export</span> AVAILABILITY=<span class="code-str">"Immediate / Full-Time"</span></span></div>
+                            <div class="code-line"><span class="line-num">07</span><span class="code-content"><span class="code-comment"># Status: Ready to build high-impact Google infrastructure</span></span></div>
+                            <div class="code-line"><span class="line-num">08</span><span class="code-content">echo <span class="code-str">"Status: 100% production ready."</span></span></div>
+                        </div>
+
+                        <!-- Tab 2: metrics.json -->
+                        <div class="terminal-code" id="tab-metrics">
+                            <div class="code-line"><span class="line-num">01</span><span class="code-content">{</span></div>
+                            <div class="code-line"><span class="line-num">02</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"eval_throughput"</span>: <span class="code-str">"100K+ evals / day"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">03</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"csp_convergence"</span>: <span class="code-val">"&lt;0.32 seconds"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">04</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"replanning_latency"</span>: <span class="code-val">"&lt;100ms"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">05</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"simulated_recovery"</span>: <span class="code-str">"₹2.52 Crore"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">06</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"space_complexity"</span>: <span class="code-str">"O(1) Streaming"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">07</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"chaos_invariants"</span>: <span class="code-bool">true</span>,</span></div>
+                            <div class="code-line"><span class="line-num">08</span><span class="code-content">&nbsp;&nbsp;<span class="code-key">"double_booking_guarantee"</span>: <span class="code-str">"0.00% collision"</span></span></div>
+                            <div class="code-line"><span class="line-num">09</span><span class="code-content">}</span></div>
+                        </div>
+
+                        <!-- Tab 3: google-fit.ts -->
+                        <div class="terminal-code" id="tab-googlefit">
+                            <div class="code-line"><span class="line-num">01</span><span class="code-content"><span class="code-keyword">interface</span> <span class="code-key">CandidateFit</span> {</span></div>
+                            <div class="code-line"><span class="line-num">02</span><span class="code-content">&nbsp;&nbsp;scaleMindset: <span class="code-str">"Designs for edge-cases &amp; 100x traffic"</span>;</span></div>
+                            <div class="code-line"><span class="line-num">03</span><span class="code-content">&nbsp;&nbsp;algorithmicRigor: <span class="code-str">"Bitmask state spaces &amp; local repair"</span>;</span></div>
+                            <div class="code-line"><span class="line-num">04</span><span class="code-content">&nbsp;&nbsp;systemSafety: <span class="code-str">"OPA Rego policies + immudb tamper-evident ledgers"</span>;</span></div>
+                            <div class="code-line"><span class="line-num">05</span><span class="code-content">&nbsp;&nbsp;codeCraft: <span class="code-str">"Thoroughly tested with E2E, Chaos, and Saga Rollbacks"</span>;</span></div>
+                            <div class="code-line"><span class="line-num">06</span><span class="code-content">}</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==========================================================================
+         METRICS RIBBON (RECRUITER FAST SCAN BAR)
+         ========================================================================== -->
+    <div class="metrics-ribbon">
+        <div class="metrics-container">
+            <div class="metric-box">
+                <div class="metric-value counter" data-target="100000" data-suffix="+">100K+</div>
+                <div class="metric-label">Evals / Day</div>
+                <div class="metric-context">MetaCog Benchmark</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">&lt;0.32s</div>
+                <div class="metric-label">CSP Solve Time</div>
+                <div class="metric-context">Placement Scheduler</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">144-bit</div>
+                <div class="metric-label">Bitmask Registry</div>
+                <div class="metric-context">Zero-collision checks</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">₹2.52Cr</div>
+                <div class="metric-label">Simulated Volume</div>
+                <div class="metric-context">RecoverAI Razorpay</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value counter" data-target="127" data-suffix="+">127+</div>
+                <div class="metric-label">Production Tests</div>
+                <div class="metric-context">Unit, Integration, Sagas</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">O(1)</div>
+                <div class="metric-label">Space Bound</div>
+                <div class="metric-context">Streaming Metacognition</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION WITH FILTER TABS
+         ========================================================================== -->
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Production Portfolio</div>
+                <h2 class="section-title">Architected for Scale &amp; Correctness</h2>
+                <p class="section-sub">
+                    Explore production systems spanning Agentic AI pipelines, constraint satisfaction solvers,
+                    fault-tolerant financial saga engines, and high-throughput evaluation frameworks.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All Systems (12)</button>
+                <button class="filter-btn" data-filter="agentic">Agentic AI &amp; ML (4)</button>
+                <button class="filter-btn" data-filter="systems">Fintech &amp; Distributed (3)</button>
+                <button class="filter-btn" data-filter="algorithms">Algorithms &amp; Performance (3)</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack &amp; Tools (2)</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+
+                <!-- 1. FEATURED: Client Flow — Agentic AI Platform -->
+                <div class="project-card featured-card reveal" data-category="agentic" data-project="clientflow">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag emerald">Agentic AI · Multi-Agent Orchestration</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Client_flow_project" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn" title="View Source on GitHub">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Client Flow</h3>
+                        <p class="project-desc">
+                            Agentic AI platform for proactive customer intelligence and autonomous task execution.
+                            Detects user intent, generates multi-step execution plans, and executes verified tool adapters
+                            across CRM, Jira, ServiceNow, and financial ledgers with safety guardrails and immutable audit logs.
+                        </p>
+                        <div class="arch-highlight-box">
+                            <div class="arch-highlight-title">Architectural Pipeline</div>
+                            <div class="arch-highlight-desc">Intent Detection → Plan Synthesis → Tool Execution → Policy Validation → Cryptographic Audit Trail</div>
+                        </div>
+                        <button class="btn-arch-modal" onclick="openArchModal('clientflow')">
+                            <span>🔍 Deep Dive System Spec</span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">Intent</span>
+                                <span class="project-stat-tag">Planner Executor</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">Multi-Tool</span>
+                                <span class="project-stat-tag">Jira / CRM / Ledger</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">100%</span>
+                                <span class="project-stat-tag">Audit Verified</span>
+                            </div>
+                        </div>
+                        <p class="project-desc mb-0">
+                            Engineered with rigorous separation of concerns. Includes E2E sandbox evaluation suites and
+                            interactive demonstration interfaces for enterprise walkthroughs.
+                        </p>
+                        <div class="project-stack">
+                            <span class="tech-chip">TypeScript</span>
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">Node.js</span>
+                            <span class="tech-chip">Agentic AI</span>
+                            <span class="tech-chip">Tool Adapters</span>
+                            <span class="tech-chip">Safety Guardrails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FEATURED: The Placement Week Scheduler -->
+                <div class="project-card featured-card reveal" data-category="algorithms" data-project="scheduler">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag blue">Algorithms · Constraint Satisfaction Engine</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/The-Placement-Week-Scheduler" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn" title="View Source on GitHub">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">The Placement Week Scheduler</h3>
+                        <p class="project-desc">
+                            Production-grade constraint satisfaction engine scheduling <strong>800 students × 35 companies across 20 rooms over 4 days</strong>.
+                            Guarantees zero double-bookings with sub-second convergence. Features real-time disruption replanning with local-repair heuristics.
+                        </p>
+                        <div class="arch-highlight-box">
+                            <div class="arch-highlight-title">Algorithmic Innovation</div>
+                            <div class="arch-highlight-desc">144-bit bitmask occupancy registry enabling O(1) bitwise feasibility checks and 5-phase local repair.</div>
+                        </div>
+                        <button class="btn-arch-modal" onclick="openArchModal('scheduler')">
+                            <span>🔍 Deep Dive System Spec</span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">&lt;0.32s</span>
+                                <span class="project-stat-tag">Full Scheduling</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">&lt;100ms</span>
+                                <span class="project-stat-tag">Dynamic Replanning</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num amber">12/12</span>
+                                <span class="project-stat-tag">Chaos Invariants</span>
+                            </div>
+                        </div>
+                        <p class="project-desc mb-0">
+                            Resilient against 4 disruption classes: student delays, interviewer dropouts, company withdrawals,
+                            and room failures. Version-controlled state management with zero-loss rollback.
+                        </p>
+                        <div class="project-stack">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">FastAPI</span>
+                            <span class="tech-chip">Bitmask CSP</span>
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">PostgreSQL</span>
+                            <span class="tech-chip">Chaos Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. FEATURED: RecoverAI — Razorpay AI Buildathon -->
+                <div class="project-card featured-card reveal" data-category="systems" data-project="recoverai">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag amber">Fintech · Autonomous Recovery &amp; Sagas</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/RecoverAI_Razor_pay" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn" title="View Source on GitHub">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">RecoverAI</h3>
+                        <p class="project-desc">
+                            Autonomous revenue recovery platform with governed AI agents. Analyzes payment failures across
+                            a 6-category taxonomy, generates AI recovery strategies, enforces OPA Rego policy firewall checks,
+                            and orchestrates durable workflows via Temporal with cryptographic ledger settlement (immudb).
+                        </p>
+                        <div class="arch-highlight-box">
+                            <div class="arch-highlight-title">Financial Invariant</div>
+                            <div class="arch-highlight-desc">Strict enforcement of ACTION_EXECUTED ≠ RECOVERED to prevent double-recovery and state drift.</div>
+                        </div>
+                        <button class="btn-arch-modal" onclick="openArchModal('recoverai')">
+                            <span>🔍 Deep Dive System Spec</span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">127</span>
+                                <span class="project-stat-tag">Unit Tests</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">19</span>
+                                <span class="project-stat-tag">Integration Sagas</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num amber">₹2.52Cr</span>
+                                <span class="project-stat-tag">Simulated Vol</span>
+                            </div>
+                        </div>
+                        <p class="project-desc mb-0">
+                            Built for Razorpay AI Buildathon. Integrates AI Strategy Advisor, Open Policy Agent (OPA) Firewall,
+                            Temporal Saga Orchestrator, and immudb cryptographic ledger.
+                        </p>
+                        <div class="project-stack">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">FastAPI</span>
+                            <span class="tech-chip">Temporal</span>
+                            <span class="tech-chip">OPA Rego</span>
+                            <span class="tech-chip">immudb</span>
+                            <span class="tech-chip">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. STANDARD: MetaCog Bench -->
+                <div class="project-card standard-card reveal" data-category="agentic" data-project="metacog">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag purple">AI Benchmarking · Metacognition</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/MetaCog-BenchMark-Kaggle-Competition"
+                                    target="_blank" rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">MetaCog Bench</h3>
+                        <p class="project-desc">
+                            LLM metacognition evaluation framework measuring AI confidence calibration, error detection,
+                            belief correction, and epistemic state recognition. Exposes failure modes missed by MMLU &amp; TruthfulQA.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">100K+</span>
+                                <span class="project-stat-tag">Evals / Day</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">O(1)</span>
+                                <span class="project-stat-tag">Space Complexity</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num amber">O(n)</span>
+                                <span class="project-stat-tag">Streaming Time</span>
+                            </div>
+                        </div>
+                        <button class="btn-arch-modal" onclick="openArchModal('metacog')">
+                            <span>🔍 Deep Dive System Spec</span>
+                        </button>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">Python</span>
+                        <span class="tech-chip">FastAPI</span>
+                        <span class="tech-chip">scikit-learn</span>
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">Docker</span>
+                    </div>
+                </div>
+
+                <!-- 5. STANDARD: SmartSettle -->
+                <div class="project-card standard-card reveal" data-category="systems" data-project="smartsettle">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag amber">Fintech · Payment Routing</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Smart-Settle" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">SmartSettle</h3>
+                        <p class="project-desc">
+                            High-frequency payment settlement optimizer with priority queues and deadline-aware scheduling.
+                            Predicts gateway congestion using ML models with adaptive retry backoff.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">1K+</span>
+                                <span class="project-stat-tag">tx/sec peak</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">O(N log N)</span>
+                                <span class="project-stat-tag">Heap Dispatch</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num amber">Redis</span>
+                                <span class="project-stat-tag">Priority State</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">Node.js</span>
+                        <span class="tech-chip">TypeScript</span>
+                        <span class="tech-chip">Priority Queues</span>
+                        <span class="tech-chip">Redis</span>
+                        <span class="tech-chip">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- 6. COMPACT: RedRob Candidate Ranker -->
+                <div class="project-card compact-card reveal" data-category="agentic">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag blue">AI · Recruitment</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/redrob-candidate-ranker" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">RedRob Ranker</h3>
+                        <p class="project-desc">
+                            Machine learning candidate scoring system utilizing XGBoost and NLP feature vectors for automated profile evaluation.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">98%</span>
+                                <span class="project-stat-tag">Accuracy</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">50x</span>
+                                <span class="project-stat-tag">Speedup</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">Python</span>
+                        <span class="tech-chip">XGBoost</span>
+                        <span class="tech-chip">FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- 7. COMPACT: AetherFlow AI Landing -->
+                <div class="project-card compact-card reveal" data-category="algorithms">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag emerald">Frontend · Web Vitals</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Aether-Flow-AI" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">AetherFlow AI</h3>
+                        <p class="project-desc">
+                            Sub-second TTI landing platform optimized for high conversion, zero CLS, and 100/100 Lighthouse performance metrics.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">&lt;1.5s</span>
+                                <span class="project-stat-tag">TTI</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">100/100</span>
+                                <span class="project-stat-tag">Lighthouse</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">TypeScript</span>
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">Web Vitals</span>
+                    </div>
+                </div>
+
+                <!-- 8. COMPACT: Rent-Go Fleet Management -->
+                <div class="project-card compact-card reveal" data-category="fullstack">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag red">Full Stack · Cloud</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Rent-Go-Vehicle-Rental-Management-System-"
+                                    target="_blank" rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Rent-Go</h3>
+                        <p class="project-desc">
+                            Vehicle rental management system supporting real-time fleet tracking, transactional booking consistency, and billing.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">Full</span>
+                                <span class="project-stat-tag">Stack Flow</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">ACID</span>
+                                <span class="project-stat-tag">Postgres</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">TypeScript</span>
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">Node.js</span>
+                        <span class="tech-chip">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- 9. COMPACT: AgriAI -->
+                <div class="project-card compact-card reveal" data-category="agentic">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag blue">AI · Public Infra</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Agri-AI-Project" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">AgriAI</h3>
+                        <p class="project-desc">
+                            Multilingual agricultural decision engine integrating OpenWeatherMap, ISRO Bhuvan satellite feeds, and E-NAM market data.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">3</span>
+                                <span class="project-stat-tag">Live APIs</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">Multi</span>
+                                <span class="project-stat-tag">Lingual</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">Python</span>
+                        <span class="tech-chip">FastAPI</span>
+                        <span class="tech-chip">Docker</span>
+                    </div>
+                </div>
+
+                <!-- 10. COMPACT: SecureNote -->
+                <div class="project-card compact-card reveal" data-category="systems">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag amber">Security · WebSockets</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/secure-note" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">SecureNote</h3>
+                        <p class="project-desc">
+                            Client-side AES-256 encrypted note application paired with real-time threat monitoring and WebSocket alert streams.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">AES-256</span>
+                                <span class="project-stat-tag">Zero Knowledge</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">WS</span>
+                                <span class="project-stat-tag">Realtime</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">FastAPI</span>
+                        <span class="tech-chip">WebSocket</span>
+                    </div>
+                </div>
+
+                <!-- 11. COMPACT: Customer Support RAG System -->
+                <div class="project-card compact-card reveal" data-category="agentic">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag purple">GenAI · Retrieval</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Customer-Support-RAG-System" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Support RAG</h3>
+                        <p class="project-desc">
+                            LangChain-driven RAG pipeline backed by Pinecone vector storage with Whisper local speech-to-text and proactive PII masking.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">Whisper</span>
+                                <span class="project-stat-tag">Voice STT</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">PII</span>
+                                <span class="project-stat-tag">Masking</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">LangChain</span>
+                        <span class="tech-chip">Pinecone</span>
+                        <span class="tech-chip">FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- 12. COMPACT: HealthPilot -->
+                <div class="project-card compact-card reveal" data-category="fullstack">
+                    <div>
+                        <div class="card-top">
+                            <span class="category-tag red">HealthTech · Full Stack</span>
+                            <div class="card-links">
+                                <a href="https://github.com/YuvanChaudary/Health_pilot" target="_blank"
+                                    rel="noopener noreferrer" class="card-icon-btn">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">HealthPilot</h3>
+                        <p class="project-desc">
+                            Personal healthcare management portal with automated hospital indexing, pharmacy directory, and expense estimators.
+                        </p>
+                        <div class="project-stats-ribbon">
+                            <div class="project-stat-item">
+                                <span class="project-stat-num">React</span>
+                                <span class="project-stat-tag">UI Client</span>
+                            </div>
+                            <div class="project-stat-item">
+                                <span class="project-stat-num blue">Flask</span>
+                                <span class="project-stat-tag">API Engine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-stack">
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">Flask</span>
+                        <span class="tech-chip">SQLite</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & SYSTEMS ENGINEERING MATRIX
+         ========================================================================== -->
+    <section id="skills">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Technical Competencies</div>
+                <h2 class="section-title">Systems &amp; Engineering Matrix</h2>
+                <p class="section-sub">
+                    Core technical skills organized across languages, agentic workflows, distributed backends,
+                    cloud infrastructure, and high-performance frontend interfaces.
+                </p>
+            </div>
+
+            <div class="skills-matrix">
+                <!-- 1. Core Languages -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">⚡</span>
+                        <h3 class="domain-title">Languages</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">Python</span>
+                        <span class="skill-badge starred">TypeScript</span>
+                        <span class="skill-badge starred">JavaScript (ES6+)</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge starred">SQL (PostgreSQL)</span>
+                        <span class="skill-badge">Rust (Basics)</span>
+                        <span class="skill-badge">C / C++</span>
+                        <span class="skill-badge">Bash / Shell</span>
+                    </div>
+                </div>
+
+                <!-- 2. AI / ML & Agentic Systems -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">🤖</span>
+                        <h3 class="domain-title">Agentic AI &amp; ML</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">Multi-Agent Systems</span>
+                        <span class="skill-badge starred">Tool-Calling Adapters</span>
+                        <span class="skill-badge starred">Temporal Workflows</span>
+                        <span class="skill-badge">LLM Calibration</span>
+                        <span class="skill-badge">LangChain / RAG</span>
+                        <span class="skill-badge starred">scikit-learn</span>
+                        <span class="skill-badge">Pinecone Vector DB</span>
+                        <span class="skill-badge">Prompt Defense / Guardrails</span>
+                    </div>
+                </div>
+
+                <!-- 3. Distributed Systems & Backend -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">🌐</span>
+                        <h3 class="domain-title">Distributed Backend</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">FastAPI</span>
+                        <span class="skill-badge starred">Node.js / Express</span>
+                        <span class="skill-badge starred">OPA Rego Policies</span>
+                        <span class="skill-badge">Redis Caching</span>
+                        <span class="skill-badge">RESTful APIs</span>
+                        <span class="skill-badge">gRPC (Basics)</span>
+                        <span class="skill-badge">WebSockets</span>
+                        <span class="skill-badge">Distributed Sagas</span>
+                    </div>
+                </div>
+
+                <!-- 4. Databases & Storage -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">💾</span>
+                        <h3 class="domain-title">Databases &amp; Ledgers</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">PostgreSQL</span>
+                        <span class="skill-badge starred">immudb (Cryptographic Ledger)</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Redis Streams</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">ACID Transactions</span>
+                        <span class="skill-badge">Query Optimization</span>
+                    </div>
+                </div>
+
+                <!-- 5. Cloud & DevOps -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">☁️</span>
+                        <h3 class="domain-title">Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">Docker &amp; Containers</span>
+                        <span class="skill-badge starred">AWS Cloud Foundations</span>
+                        <span class="skill-badge">Kubernetes (Concepts)</span>
+                        <span class="skill-badge starred">CI/CD Pipelines</span>
+                        <span class="skill-badge">GitHub Actions</span>
+                        <span class="skill-badge">Linux System Administration</span>
+                        <span class="skill-badge">Git &amp; Branch Workflows</span>
+                    </div>
+                </div>
+
+                <!-- 6. Frontend & Performance -->
+                <div class="skill-domain-card reveal">
+                    <div class="domain-header">
+                        <span class="domain-icon">🎨</span>
+                        <h3 class="domain-title">Frontend &amp; UI/UX</h3>
+                    </div>
+                    <div class="skill-badge-list">
+                        <span class="skill-badge starred">React 19</span>
+                        <span class="skill-badge starred">Next.js</span>
+                        <span class="skill-badge">Tailwind CSS</span>
+                        <span class="skill-badge starred">Core Web Vitals</span>
+                        <span class="skill-badge">Framer Motion</span>
+                        <span class="skill-badge">HTML5 Canvas / Shaders</span>
+                        <span class="skill-badge">Accessible UI (a11y)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & EDUCATION TIMELINE
+         ========================================================================== -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Track Record</div>
+                <h2 class="section-title">Experience &amp; Education</h2>
+                <p class="section-sub">
+                    Practical engineering experience delivering production-grade web systems and building distributed tools.
+                </p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-spine"></div>
+
+                <!-- Entry 1: Codec Technologies -->
+                <div class="timeline-entry current reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date-tag">JUN 2026 — PRESENT // CURRENT</span>
+                        <h3 class="timeline-role-title">Java Developer Intern</h3>
+                        <div class="timeline-org">Codec Technologies · Remote, India <span style="font-size: 0.72rem; color: var(--text-dim);">(Junior Technical Analyst Intern)</span></div>
+                        <ul class="timeline-details">
+                            <li>Developed and maintained resilient backend services in <strong>Java and SQL</strong>, writing modular database queries to process large transactional datasets.</li>
+                            <li>Automated validation scripts to proactively detect data anomalies across high-volume pipelines.</li>
+                            <li>Actively participated in Agile sprint delivery, architecture discussions, and Git pull request code reviews.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Entry 2: PujaAtHome -->
+                <div class="timeline-entry current reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date-tag">AUG 2026 — PRESENT // CURRENT</span>
+                        <h3 class="timeline-role-title">Web Developer Intern</h3>
+                        <div class="timeline-org">PujaAtHome · Remote, India</div>
+                        <ul class="timeline-details">
+                            <li>Optimized server-side database queries and execution routes, <strong>improving endpoint response performance by 25%</strong>.</li>
+                            <li>Architected and deployed automated monitoring routines to perform scheduled health checks and verify 24/7 API availability.</li>
+                            <li>Structured modular route handlers and integrated relational schemas to streamline data retrieval.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Entry 3: Education & Honors -->
+                <div class="timeline-entry reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date-tag">2023 — 2027 // ACADEMIC FOUNDATIONS</span>
+                        <h3 class="timeline-role-title">Bachelor of Engineering (B.E.) — Computer Science &amp; Engineering</h3>
+                        <div class="timeline-org">K S School of Engineering and Management (VTU) · Bengaluru, India</div>
+                        <ul class="timeline-details">
+                            <li><strong>Academic Standing:</strong> CGPA: 7.97 / 10.0 (First Class with Distinction).</li>
+                            <li><strong>Core Coursework:</strong> Data Structures &amp; Algorithms, Operating Systems, DBMS, Computer Networks, OOP (Java), Distributed Systems.</li>
+                            <li><strong>National Hackathon Accolades:</strong>
+                                <br>• 🏆 <strong>1st Prize Winner:</strong> Sri Ram College of Engineering National Hackathon (Team Hack-Knights), 2026.
+                                <br>• 🥈 <strong>2nd Prize Winner:</strong> Amadeus × Contentstack Enterprise AI Hackathon, 2026.
+                            </li>
+                            <li><strong>Algorithmic Mastery:</strong> Solved 136+ complex algorithmic challenges across Trees, Graphs, Hash Maps, and Dynamic Programming.</li>
+                            <li><strong>Verified Certifications:</strong> Codorythm Certified DSA Foundation (86.7%), KSSEM DSA Algorithms (93.7%), Enterprise AI (100.0%).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         RECRUITER INSTANT CONNECT & TERMINAL CONTACT
+         ========================================================================== -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="contact-grid">
+                <!-- Left: Recruiter Pitch & Quick Actions -->
+                <div class="reveal">
+                    <div class="section-eyebrow">Direct Line</div>
+                    <h2 class="contact-pitch-title">
+                        Let's build systems <br><span class="accent">that scale to billions.</span>
+                    </h2>
+                    <p class="contact-pitch-desc">
+                        I am targeting <strong>SDE-1 / Software Engineering</strong> roles at Google and leading technology companies.
+                        If you are looking for an engineer who thrives on algorithmic challenges, deterministic execution, and agentic workflows,
+                        let's connect.
+                    </p>
+
+                    <div class="quick-connect-pills">
+                        <!-- Email Pill with Click-to-Copy -->
+                        <div class="connect-pill" id="emailPill" style="cursor: pointer;" title="Click to Copy Email">
+                            <div class="pill-left">
+                                <span class="pill-icon">@</span>
+                                <div>
+                                    <div class="pill-title">yuvanchaudary2004@gmail.com</div>
+                                    <div class="pill-sub">Click to copy to clipboard</div>
+                                </div>
+                            </div>
+                            <span class="pill-action" id="copyActionText">COPY 📋</span>
+                        </div>
+
+                        <!-- Phone -->
+                        <a href="tel:+918722451693" class="connect-pill">
+                            <div class="pill-left">
+                                <span class="pill-icon">📞</span>
+                                <div>
+                                    <div class="pill-title">+91 8722451693</div>
+                                    <div class="pill-sub">Direct mobile / WhatsApp</div>
+                                </div>
+                            </div>
+                            <span class="pill-action">CALL ↗</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/yuvan-chaudary/" target="_blank" rel="noopener noreferrer"
+                            class="connect-pill">
+                            <div class="pill-left">
+                                <span class="pill-icon">in</span>
+                                <div>
+                                    <div class="pill-title">linkedin.com/in/yuvan-chaudary</div>
+                                    <div class="pill-sub">Connect &amp; Message on LinkedIn</div>
+                                </div>
+                            </div>
+                            <span class="pill-action">OPEN ↗</span>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
+                            class="connect-pill">
+                            <div class="pill-left">
+                                <span class="pill-icon">&lt;&gt;</span>
+                                <div>
+                                    <div class="pill-title">github.com/YuvanChaudary</div>
+                                    <div class="pill-sub">Inspect code, commits &amp; architecture</div>
+                                </div>
+                            </div>
+                            <span class="pill-action">VISIT ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Terminal Contact Form -->
+                <div class="reveal">
+                    <div class="terminal-form-card">
+                        <div class="section-eyebrow" style="margin-bottom: 1rem;">// fast-track message</div>
+                        <div class="form-group">
+                            <label class="form-label">// Recruiter / Engineering Lead Name</label>
+                            <input type="text" class="form-input" id="fName" placeholder="e.g. Sundar Pichai or Hiring Team">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">// Work Email</label>
+                            <input type="email" class="form-input" id="fEmail" placeholder="yourname@google.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">// Role or Project Discussion</label>
+                            <textarea class="form-textarea" id="fMsg"
+                                placeholder="Hi Yuvan, we were impressed with your constraint scheduler and agentic AI projects. Let's discuss an SDE-1 opportunity..."></textarea>
+                        </div>
+                        <div class="form-status" id="fStatus"></div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="handleForm()">
+                            <span>// Send Message to Yuvan</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
     <footer>
-        <span>yuvan@dev:~$ <span class="text-green">built with precision & scale</span></span>
-        <span>© 2026 Yuvan Chaudary</span>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span>yuvan@google-ready:~$ </span>
+                <span class="accent">architected with precision, testability &amp; scale</span>
+            </div>
+            <div>
+                <span>© 2026 Yuvan Chaudary · All Systems Operational</span>
+            </div>
+        </div>
     </footer>
 
+    <!-- ==========================================================================
+         SYSTEM DESIGN ARCHITECTURE MODAL
+         ========================================================================== -->
+    <div class="modal-overlay" id="archModalOverlay">
+        <div class="modal-container" id="archModalContainer">
+            <button class="modal-close-btn" id="modalCloseBtn" onclick="closeArchModal()">&times;</button>
+            <div id="modalDynamicContent">
+                <!-- Content injected dynamically via openArchModal(id) -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         CLIENT SCRIPTS: CANVAS, CURSOR, TERMINAL, METRICS & MODALS
+         ========================================================================== -->
     <script>
-        const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        let cursorRing = null;
-
-        function animateRing() {
-            if (cursorRing) {
-                rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-                cursorRing.style.left = rx + 'px'; cursorRing.style.top = ry + 'px';
+        // --- 1. SYSTEM ARCHITECTURE SPECS DATA ---
+        const ARCH_SPECS = {
+            clientflow: {
+                tag: "Agentic AI · Multi-Agent Tool Orchestration",
+                title: "Client Flow: Multi-Agent Intelligence Engine",
+                diagram: `[User Prompt / CRM Webhook]
+       ↓
+[Intent Classification Engine] → (Semantic & Rule-Based Fallback)
+       ↓
+[Planner Module] → Decomposes into Dependency Graph of Subtasks
+       ↓
+[Policy & Safety Guardrail Firewall] (OPA / PII Redaction)
+       ↓
+[Tool Adapters]: 
+   ├── CRM Adapter (Salesforce / HubSpot)
+   ├── Issue Tracker (Jira Cloud API)
+   ├── ITSM Adapter (ServiceNow Incident Creation)
+   └── Financial Ledger (Transactional Ledger Entry)
+       ↓
+[Validation Engine] → Verifies tool output contracts
+       ↓
+[Cryptographic Audit Trail] → Tamper-evident Execution Log`,
+                sections: [
+                    {
+                        title: "System Architecture & Core Decoupling",
+                        points: [
+                            "<strong>Strict Separation of Concerns:</strong> The platform segregates Intent Detection from Planning, Tool Invocation, Policy Verification, and Audit Logging.",
+                            "<strong>Fail-Safe Tool Adapters:</strong> Every third-party adapter (Jira, ServiceNow, CRM) executes inside isolated try-catch wrappers with dynamic backoff retry logic and idempotency keys.",
+                            "<strong>Auditability First:</strong> Before executing any write action against external enterprise databases, an execution intent snapshot is stored in the audit ledger, guaranteeing 100% traceability."
+                        ]
+                    },
+                    {
+                        title: "Why This Matters for Google Recruiters",
+                        points: [
+                            "Demonstrates enterprise-grade agent orchestration beyond simple prompt wrappers.",
+                            "Enforces safety guardrails, preventing catastrophic side-effects in autonomous workflows.",
+                            "Includes comprehensive E2E test coverage and sandbox environments for safe evaluation."
+                        ]
+                    }
+                ]
+            },
+            scheduler: {
+                tag: "Systems & Algorithms · Constraint Satisfaction Solver",
+                title: "Placement Week Scheduler: Sub-Second Constraint Solver",
+                diagram: `[Input Constraints] (800 Students × 35 Companies × 20 Rooms × 4 Days)
+       ↓
+[Bitmask Matrix Initialization] (144-bit Bitmask per Student / Room / Slot)
+       ↓
+[Priority-Greedy Initial Allocation] (Sorted by company interview capacity)
+       ↓
+[Conflict Detector: O(1) Bitwise AND]
+   ├── RoomOccupancyMask & StudentScheduleMask == 0 ? (FEASIBLE)
+   └── RoomOccupancyMask & StudentScheduleMask != 0 ? (CONFLICT)
+       ↓
+[5-Phase Local Repair Heuristic] (Re-allocates conflicting slots dynamically)
+       ↓
+[Disruption Ingestion Engine] (Real-time student delay / interviewer dropout)
+       ↓
+[Dynamic Replanning in <100ms] → Zero double-bookings guaranteed`,
+                sections: [
+                    {
+                        title: "Algorithmic Rigor & Bitmask Optimization",
+                        points: [
+                            "<strong>144-Bit Occupancy Registries:</strong> Rather than querying complex relational tables or 3D nested arrays, time slots are encoded in 144-bit bitmasks, allowing slot conflict detection in a single CPU instruction via bitwise AND.",
+                            "<strong>Sub-Second Convergence:</strong> Solves a massive 800-student combinatorial problem in less than 0.32 seconds.",
+                            "<strong>Chaos-Resilient Replanning:</strong> Evaluated against 12 chaos failure scenarios including company withdrawals, unexpected student delays, and room unavailability. Re-plans in under 100ms."
+                        ]
+                    },
+                    {
+                        title: "Why This Matters for Google Recruiters",
+                        points: [
+                            "Directly mirrors Google's emphasis on algorithmic efficiency, Big-O space/time optimization, and mathematical rigor.",
+                            "Shows deep proficiency in designing deterministic solvers that avoid NP-hard combinatorial explosion."
+                        ]
+                    }
+                ]
+            },
+            recoverai: {
+                tag: "Fintech & Autonomous Workflows · Saga Orchestration",
+                title: "RecoverAI: Governed Autonomous Revenue Recovery",
+                diagram: `[Payment Gateway Webhook (Razorpay / Stripe Failure Event)]
+       ↓
+[Failure Diagnosis Classifier] (6-Category Failure Taxonomy: Auth, Funds, Gate, Network, Limit, Fraud)
+       ↓
+[AI Recovery Strategy Advisor] (Selects optimal recovery avenue)
+       ↓
+[Open Policy Agent (OPA) Rego Firewall] (Enforces compliance & max retry rules)
+       ↓
+[Temporal Workflow Saga Orchestration]
+   ├── Activity 1: Initiate alternate card/UPI collection
+   ├── Activity 2: Dynamic customer reminder dispatch
+   └── Compensation Activity (On timeout or rejection: Release hold)
+       ↓
+[immudb Cryptographic Ledger] (Verifies settlement state & tamper proof history)`,
+                sections: [
+                    {
+                        title: "Financial Invariants & Safety Engineering",
+                        points: [
+                            "<strong>Crucial Financial Invariant:</strong> <code>ACTION_EXECUTED ≠ RECOVERED</code>. Unlike naive retry bots, RecoverAI only marks a recovery as settled once the gateway issues a cryptographically validated settlement confirmation.",
+                            "<strong>Temporal Saga Architecture:</strong> Long-running recovery workflows survive process crashes, worker restarts, and network partitions with automated compensation rollbacks.",
+                            "<strong>OPA Rego Firewall:</strong> Independent policy verification prevents unauthorized charges, exceeding daily retry quotas, or violating customer notification compliance."
+                        ]
+                    },
+                    {
+                        title: "Why This Matters for Google Recruiters",
+                        points: [
+                            "Built for the Razorpay AI Buildathon with 127 unit tests and 19 integration workflows.",
+                            "Demonstrates enterprise fintech maturity, durable execution (Temporal), and cryptographic auditability."
+                        ]
+                    }
+                ]
+            },
+            metacog: {
+                tag: "AI Benchmarking & Evaluation · Metacognition",
+                title: "MetaCog Bench: LLM Metacognitive Calibration Framework",
+                diagram: `[LLM Prompt Evaluation Stream]
+       ↓
+[Epistemic Confidence Elicitation] (Raw Logits vs Self-Reported Confidence)
+       ↓
+[Adversarial Pressure Injection] (Tests sycophancy, reversal under challenge)
+       ↓
+[Belief Correction Diagnostic Engine]
+       ↓
+[O(1) Streaming Metrics Accumulator] (Brier Score, ECE, Sycophancy Index)
+       ↓
+[Live Interactive Analytics Dashboard]`,
+                sections: [
+                    {
+                        title: "Scientific Rigor & Stream Processing",
+                        points: [
+                            "<strong>Exposing Subtle AI Failure Modes:</strong> Traditional benchmarks (MMLU, TruthfulQA) score accuracy but fail to detect when models hallucinate with 99% reported confidence or reverse correct answers under peer pressure.",
+                            "<strong>100K+ Daily Evaluations:</strong> Streaming evaluation engine maintains O(1) space complexity by using online Welford algorithms for running variance and calibration computation.",
+                            "<strong>Kaggle Competition-Ready:</strong> Modular design with exportable evaluation artifacts and visualization dashboards."
+                        ]
+                    },
+                    {
+                        title: "Why This Matters for Google Recruiters",
+                        points: [
+                            "Directly relevant to Google DeepMind and Google Cloud Vertex AI evaluation paradigms.",
+                            "Combines machine learning theory, statistics, and high-performance streaming architectures."
+                        ]
+                    }
+                ]
             }
-            requestAnimationFrame(animateRing);
-        }
-        requestAnimationFrame(animateRing);
+        };
 
-        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-            const cursor = document.getElementById('cursor');
-            const ring = document.getElementById('cursorRing');
-            if (cursor && ring) {
-                cursorRing = ring;
-                cursor.style.display = 'block';
-                ring.style.display = 'block';
-                document.addEventListener('mousemove', e => {
-                    mx = e.clientX; my = e.clientY;
-                    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+        // --- 2. INTERACTIVE PARTICLES CANVAS (60FPS LOW-CPU) ---
+        (function initCanvasBackground() {
+            const canvas = document.getElementById('bgCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            const particleCount = Math.min(Math.floor((w * h) / 18000), 75);
+            let mouse = { x: -1000, y: -1000 };
+
+            window.addEventListener('mousemove', e => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.45,
+                    vy: (Math.random() - 0.5) * 0.45,
+                    size: Math.random() * 1.6 + 0.8,
+                    color: Math.random() > 0.4 ? 'rgba(0, 255, 157, ' : 'rgba(56, 189, 248, ',
+                    baseAlpha: Math.random() * 0.4 + 0.15
                 });
-                document.querySelectorAll('a, button, .skill-pill').forEach(el => {
-                    el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.borderColor = 'rgba(0,255,136,0.6)'; });
-                    el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(0,255,136,0.4)'; });
-                });
             }
-        }
 
-        if (window.IntersectionObserver) {
-            const obs = new IntersectionObserver(entries => {
-                entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-        } else {
-            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-        }
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
 
-        (async function playTerminal() {
-            const cmdEl = document.getElementById('termCmd');
-            const outputEl = document.getElementById('termOutput');
-            const blinkEl = document.getElementById('termCursor');
-            if (!cmdEl || !outputEl) return;
-            outputEl.style.opacity = '0';
-            try {
-                cmdEl.textContent = '';
-                await sleep(400);
-                for (const ch of 'cat profile.json') { cmdEl.textContent += ch; await sleep(42); }
-                await sleep(200);
-                outputEl.style.opacity = '1';
-                if (blinkEl) blinkEl.style.display = 'inline-block';
-            } catch (_) {
-                outputEl.style.opacity = '1';
-                if (blinkEl) blinkEl.style.display = 'inline-block';
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0) p.x = w;
+                    if (p.x > w) p.x = 0;
+                    if (p.y < 0) p.y = h;
+                    if (p.y > h) p.y = 0;
+
+                    // Mouse gentle push
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    let alpha = p.baseAlpha;
+
+                    if (dist < 120) {
+                        alpha = Math.min(p.baseAlpha + 0.35, 0.85);
+                        p.x -= (dx / dist) * 0.6;
+                        p.y -= (dy / dist) * 0.6;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color + alpha + ')';
+                    ctx.fill();
+
+                    // Connect lines between nearby particles
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const d2 = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (d2 < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(0, 255, 157, ${0.12 * (1 - d2 / 110)})`;
+                            ctx.lineWidth = 0.75;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
             }
+            requestAnimationFrame(draw);
         })();
 
+        // --- 3. CUSTOM CURSOR & MAGNETIC EFFECT ---
+        (function initCustomCursor() {
+            if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+            const cursor = document.getElementById('cursor');
+            const ring = document.getElementById('cursorRing');
+            if (!cursor || !ring) return;
+
+            cursor.style.display = 'block';
+            ring.style.display = 'block';
+
+            let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+            let rx = mx, ry = my;
+
+            document.addEventListener('mousemove', e => {
+                mx = e.clientX;
+                my = e.clientY;
+                cursor.style.left = mx + 'px';
+                cursor.style.top = my + 'px';
+            });
+
+            function animateRing() {
+                rx += (mx - rx) * 0.18;
+                ry += (my - ry) * 0.18;
+                ring.style.left = rx + 'px';
+                ring.style.top = ry + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            requestAnimationFrame(animateRing);
+
+            const hoverables = document.querySelectorAll('a, button, .project-card, .filter-btn, .connect-pill, .skill-badge, .term-tab');
+            hoverables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    ring.style.transform = 'translate(-50%, -50%) scale(1.6)';
+                    ring.style.borderColor = 'rgba(0, 255, 157, 0.7)';
+                    ring.style.backgroundColor = 'rgba(0, 255, 157, 0.05)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    ring.style.transform = 'translate(-50%, -50%) scale(1)';
+                    ring.style.borderColor = 'rgba(0, 255, 157, 0.4)';
+                    ring.style.backgroundColor = 'transparent';
+                });
+            });
+        })();
+
+        // --- 4. HERO DYNAMIC TYPEWRITER ---
+        (function initTypewriter() {
+            const el = document.getElementById('typewriterText');
+            if (!el) return;
+
+            const roles = [
+                "Full Stack SDE (Python · FastAPI · TypeScript · React)",
+                "Agentic AI & Multi-Agent Systems Architect",
+                "Distributed Systems & Sagas Engineer",
+                "High-Throughput Optimizer (100K+ evals/day, <0.32s solvers)",
+                "Constraint Satisfaction & Bitwise Heuristics Builder"
+            ];
+
+            let roleIdx = 0;
+            let charIdx = 0;
+            let isDeleting = false;
+            let speed = 45;
+
+            function type() {
+                const current = roles[roleIdx];
+                if (isDeleting) {
+                    el.textContent = current.substring(0, charIdx - 1);
+                    charIdx--;
+                    speed = 22;
+                } else {
+                    el.textContent = current.substring(0, charIdx + 1);
+                    charIdx++;
+                    speed = 45;
+                }
+
+                if (!isDeleting && charIdx === current.length) {
+                    speed = 2200; // Pause at end of text
+                    isDeleting = true;
+                } else if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    roleIdx = (roleIdx + 1) % roles.length;
+                    speed = 350;
+                }
+                setTimeout(type, speed);
+            }
+            type();
+        })();
+
+        // --- 5. TERMINAL TABS SWITCHER ---
+        (function initTerminalTabs() {
+            const tabs = document.querySelectorAll('.term-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.terminal-code').forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const targetId = 'tab-' + tab.dataset.tab;
+                    const targetCode = document.getElementById(targetId);
+                    if (targetCode) targetCode.classList.add('active');
+                });
+            });
+        })();
+
+        // --- 6. PROJECT CATEGORY FILTERING ---
+        (function initProjectFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+
+                    cards.forEach(card => {
+                        const cat = card.dataset.category;
+                        if (filter === 'all' || cat === filter) {
+                            card.style.display = '';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(15px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 200);
+                        }
+                    });
+                });
+            });
+        })();
+
+        // --- 7. SCROLL REVEAL & ANIMATED METRIC COUNTERS ---
+        (function initScrollEffects() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, idx) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, (idx % 3) * 75);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+
+            // Animated Counters
+            const counters = document.querySelectorAll('.counter');
+            let counted = false;
+            const counterObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !counted) {
+                    counted = true;
+                    counters.forEach(c => {
+                        const target = parseInt(c.dataset.target, 10);
+                        const suffix = c.dataset.suffix || '';
+                        let current = 0;
+                        const increment = Math.ceil(target / 45);
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            c.textContent = (target >= 1000 ? Math.floor(current / 1000) + 'K' : current) + suffix;
+                        }, 25);
+                    });
+                }
+            }, { threshold: 0.3 });
+
+            const ribbon = document.querySelector('.metrics-ribbon');
+            if (ribbon) counterObserver.observe(ribbon);
+        })();
+
+        // --- 8. SYSTEM DESIGN MODAL OPEN / CLOSE ---
+        function openArchModal(projectId) {
+            const spec = ARCH_SPECS[projectId];
+            if (!spec) return;
+
+            const modalOverlay = document.getElementById('archModalOverlay');
+            const content = document.getElementById('modalDynamicContent');
+
+            let html = `
+                <div class="modal-header">
+                    <div class="modal-tag">// ${spec.tag}</div>
+                    <h2 class="modal-title">${spec.title}</h2>
+                </div>
+
+                <div class="modal-section-title">Architectural Flow Pipeline</div>
+                <div class="modal-diagram-block">${spec.diagram}</div>
+            `;
+
+            spec.sections.forEach(sec => {
+                html += `
+                    <div class="modal-section-title">${sec.title}</div>
+                    <ul class="modal-bullet-list">
+                        ${sec.points.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                `;
+            });
+
+            content.innerHTML = html;
+            modalOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArchModal() {
+            const modalOverlay = document.getElementById('archModalOverlay');
+            modalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('archModalOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('archModalOverlay')) {
+                closeArchModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeArchModal();
+        });
+
+        // --- 9. TOAST NOTIFICATION SYSTEM ---
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<span class="toast-icon">✓</span><span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('removing');
+                setTimeout(() => toast.remove(), 350);
+            }, 3000);
+        }
+
+        // --- 10. COPY EMAIL TO CLIPBOARD ---
+        const emailPill = document.getElementById('emailPill');
+        const copyActionText = document.getElementById('copyActionText');
+        const copyEmailNavBtn = document.getElementById('copyEmailNavBtn');
+
+        function copyEmail() {
+            const email = "yuvanchaudary2004@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                if (copyActionText) copyActionText.textContent = "COPIED! ✓";
+                showToast("Email copied: " + email);
+                setTimeout(() => {
+                    if (copyActionText) copyActionText.textContent = "COPY 📋";
+                }, 2500);
+            }).catch(() => {
+                window.location.href = 'mailto:' + email;
+            });
+        }
+
+        if (emailPill) emailPill.addEventListener('click', copyEmail);
+        if (copyEmailNavBtn) copyEmailNavBtn.addEventListener('click', copyEmail);
+
+        // --- 11. CONTACT FORM VALIDATION & MAIL TRIGGER ---
         function handleForm() {
             const name = document.getElementById('fName').value.trim();
             const email = document.getElementById('fEmail').value.trim();
             const msg = document.getElementById('fMsg').value.trim();
             const status = document.getElementById('fStatus');
+
             if (!name || !email || !msg) {
-                status.textContent = '// error: all fields are required'; status.className = 'form-status error'; return;
+                status.textContent = '// error: Please complete all fields before sending.';
+                status.className = 'form-status error';
+                return;
             }
+
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                status.textContent = '// error: invalid email address'; status.className = 'form-status error'; return;
+                status.textContent = '// error: Please provide a valid email address.';
+                status.className = 'form-status error';
+                return;
             }
-            const sub = encodeURIComponent('Portfolio contact from ' + name);
-            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
-            window.location.href = 'mailto:yuvanchaudary2004@gmail.com?subject=' + sub + '&body=' + body;
-            status.textContent = '// opening your mail client...'; status.className = 'form-status success';
+
+            const subject = encodeURIComponent(`SDE-1 Opportunity / Technical Discussion with Yuvan (from ${name})`);
+            const body = encodeURIComponent(`Hi Yuvan,\n\n${msg}\n\nBest regards,\n${name}\nEmail: ${email}`);
+
+            window.location.href = `mailto:yuvanchaudary2004@gmail.com?subject=${subject}&body=${body}`;
+
+            status.textContent = '// Opening your default mail client with pre-filled message...';
+            status.className = 'form-status success';
+            showToast("Opening email client for Yuvan Chaudary...");
         }
     </script>
 </body>
