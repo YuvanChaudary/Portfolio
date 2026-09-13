@@ -32,7 +32,10 @@
         <div class="hero-grid-bg"></div>
         <div class="hero-glow"></div>
         <div class="hero-content">
-            <div class="hero-tag"><span class="dot"></span>SDE-1 | Fintech · AI Infrastructure · Performance</div>
+            <div class="profile-section reveal">
+                <img src="https://avatars.githubusercontent.com/u/162781813?v=4" alt="Yuvan Chaudary" class="profile-photo">
+            </div>
+            <div class="hero-tag"><span class="dot"></span>SDE-1 | Fintech · AI Infrastructure · Systems</div>
             <h1 class="hero-name">Yuvan<br><span class="accent">Chaudary</span></h1>
 
             <div class="hero-terminal">
@@ -44,9 +47,9 @@
                     <div class="t-output">{</div>
                     <div class="t-output">&nbsp;&nbsp;"role": <span class="str">"Full Stack SDE"</span>,</div>
                     <div class="t-output">&nbsp;&nbsp;"stack": <span class="str">"Python · React · FastAPI · Node.js · PostgreSQL"</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"focus": <span class="str">"AI/ML · Fintech · Performance Optimization"</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"focus": <span class="str">"AI/ML · Fintech · Distributed Systems"</span>,</div>
                     <div class="t-output">&nbsp;&nbsp;"throughput": <span class="val">100K+ evals/day</span>,</div>
-                    <div class="t-output">&nbsp;&nbsp;"complexity": <span class="str">"O(1) space · O(n) time"</span>,</div>
+                    <div class="t-output">&nbsp;&nbsp;"systems": <span class="str">"Agentic AI · Payment Orchestration · Scheduling"</span>,</div>
                     <div class="t-output">&nbsp;&nbsp;"status": <span class="str">"building production systems at scale"</span></div>
                     <div class="t-output">}</div>
                 </div>
@@ -73,20 +76,102 @@
         </div>
         <div class="projects-grid">
 
-            <!-- NEW: LLM Evaluations Platform -->
+            <!-- NEW: Client Flow — Agentic AI -->
+            <div class="project-card featured reveal">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-tag">Agentic AI · Production</span>
+                        <div class="project-links">
+                            <a href="https://github.com/YuvanChaudary/Client_flow_project" target="_blank" rel="noopener noreferrer"
+                                class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Client Flow</h3>
+                    <p class="project-desc">Agentic AI platform for proactive customer intelligence. Detects intent, plans actions, and executes integrations across CRM, Jira, ServiceNow, and finance systems. Production-grade agent orchestration with audit trails and safety guardrails.</p>
+                    <div class="project-stack">
+                        <span class="stack-tag">TypeScript</span><span class="stack-tag">React</span>
+                        <span class="stack-tag">Node.js</span><span class="stack-tag">Agentic AI</span><span class="stack-tag">Tool Adapters</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="project-stats">
+                        <div class="stat"><span class="stat-val">Intent</span><span class="stat-label">Planner Executor</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">Multi</span><span class="stat-label">Integration CRM</span></div>
+                        <div class="stat"><span class="stat-val">100%</span><span class="stat-label">Audit Trail</span></div>
+                    </div>
+                    <p class="project-desc mb-0">Separation of concerns: Intent → Plan → Execute → Validate → Audit. Real integrations with CRM, Jira, ServiceNow. Testable agent logic with E2E tests and demonstration UI for stakeholder walkthroughs.</p>
+                </div>
+            </div>
+
+            <!-- NEW: Placement Week Scheduler -->
+            <div class="project-card featured reveal">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-tag">Systems · Algorithms</span>
+                        <div class="project-links">
+                            <a href="https://github.com/YuvanChaudary/The-Placement-Week-Scheduler" target="_blank" rel="noopener noreferrer"
+                                class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Placement Week Scheduler</h3>
+                    <p class="project-desc">Production-grade constraint satisfaction engine for 800 students × 35 companies scheduling across 20 rooms over 4 days. Real-time disruption replanning with zero double-bookings guaranteed. 144-bit bitmask occupancy registry with local-repair algorithms.</p>
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+                        <span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Algorithms</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="project-stats">
+                        <div class="stat"><span class="stat-val">&lt;0.32s</span><span class="stat-label">scheduling</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">&lt;100ms</span><span class="stat-label">replanning</span></div>
+                        <div class="stat"><span class="stat-val">12/12</span><span class="stat-label">chaos tests</span></div>
+                    </div>
+                    <p class="project-desc mb-0">Bitwise AND feasibility checks, priority-greedy allocation, 5-phase local repair. Handles 4 disruption types (delays, dropouts, withdrawals, room failures). Version-controlled schedules with full audit trails and zero-risk rollback.</p>
+                </div>
+            </div>
+
+            <!-- NEW: RecoverAI — Autonomous Revenue Recovery -->
+            <div class="project-card featured reveal">
+                <div>
+                    <div class="project-meta">
+                        <span class="project-tag">Fintech · Autonomous</span>
+                        <div class="project-links">
+                            <a href="https://github.com/YuvanChaudary/RecoverAI_Razor_pay" target="_blank" rel="noopener noreferrer"
+                                class="project-link">GitHub ↗</a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">RecoverAI</h3>
+                    <p class="project-desc">Autonomous revenue recovery platform with governed AI agents. Diagnoses payment failures, formulates AI recovery strategies, enforces OPA Rego policy guardrails, orchestrates durable workflows via Temporal, and settles via cryptographic audit ledger (immudb). Zero double-recovery guarantee.</p>
+                    <div class="project-stack">
+                        <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+                        <span class="stack-tag">React</span><span class="stack-tag">Temporal</span><span class="stack-tag">OPA Rego</span><span class="stack-tag">immudb</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="project-stats">
+                        <div class="stat"><span class="stat-val">127</span><span class="stat-label">unit tests</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">19</span><span class="stat-label">integration</span></div>
+                        <div class="stat"><span class="stat-val">₹2.52Cr</span><span class="stat-label">simulated</span></div>
+                    </div>
+                    <p class="project-desc mb-0">AI Strategy Advisor + OPA Firewall + Temporal Saga Orchestration + immudb Ledger. Razorpay AI Buildathon submission. 6-category failure taxonomy with dynamic recovery proposals. ACTION_EXECUTED ≠ RECOVERED financial invariant enforced.</p>
+                </div>
+            </div>
+
+            <!-- ENHANCED: MetaCog Bench -->
             <div class="project-card featured reveal">
                 <div>
                     <div class="project-meta">
                         <span class="project-tag">AI · Benchmarking</span>
                         <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
+                            <a href="https://github.com/YuvanChaudary/MetaCog-BenchMark-Kaggle-Competition" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub ↗</a>
                         </div>
                     </div>
                     <h3 class="project-title">MetaCog Bench</h3>
-                    <p class="project-desc">LLM metacognition benchmark framework evaluating AI models across confidence
-                        calibration, error detection, belief correction, and epistemic state recognition. Exposes
-                        critical failure modes that MMLU and TruthfulQA miss entirely.</p>
+                    <p class="project-desc">LLM metacognition benchmark framework evaluating AI models across confidence calibration, error detection, belief correction, and epistemic state recognition. Exposes critical failure modes that MMLU and TruthfulQA miss entirely.</p>
                     <div class="project-stack">
                         <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
                         <span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">scikit-learn</span><span class="stack-tag">Docker</span>
@@ -101,37 +186,7 @@
                         <div class="stat"><span class="stat-val">O(n)</span><span class="stat-label">time
                                 complexity</span></div>
                     </div>
-                    <p class="project-desc mb-0">Built adversarial pressure module to detect
-                        sycophantic reversals and evasions. Delivered React dashboard with live calibration curves,
-                        anomaly detection feeds, and composite Metacognition Score.</p>
-                </div>
-            </div>
-
-            <!-- NEW: Distributed Vector DB -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Systems · ML</span>
-                        <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
-                                class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">VectorDB — Distributed Embedding Store</h3>
-                    <p class="project-desc">High-performance distributed vector database with HNSW indexing, multi-node replication, and fault tolerance. Sub-millisecond similarity search across billion-scale embeddings.</p>
-                    <div class="project-stack">
-                        <span class="stack-tag">Rust</span><span class="stack-tag">HNSW</span>
-                        <span class="stack-tag">gRPC</span><span class="stack-tag">Protocol Buffers</span><span class="stack-tag">PostgreSQL</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">&lt;1ms</span><span class="stat-label">search latency</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">1B+</span><span class="stat-label">embeddings</span></div>
-                        <div class="stat"><span class="stat-val">99.9%</span><span class="stat-label">uptime</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Implemented consistent hashing, gossip protocol for node discovery, and RAFT-based leader election. Built comprehensive monitoring dashboard with real-time throughput analytics.</p>
+                    <p class="project-desc mb-0">Adversarial pressure module detects sycophantic reversals and evasions. React dashboard with live calibration curves, anomaly detection feeds, and composite Metacognition Score. Kaggle competition-ready evaluation framework.</p>
                 </div>
             </div>
 
@@ -141,7 +196,7 @@
                     <div class="project-meta">
                         <span class="project-tag">Frontend · Performance</span>
                         <div class="project-links">
-                            <a href="https://github.com/YuvanChaudary/AetherFlow-AI" target="_blank" rel="noopener noreferrer"
+                            <a href="https://github.com/YuvanChaudary/Aether-Flow-AI" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub ↗</a>
                         </div>
                     </div>
@@ -159,34 +214,7 @@
                         <div class="stat"><span class="stat-val">&lt;0.1</span><span class="stat-label">CLS</span></div>
                         <div class="stat"><span class="stat-val">100/100</span><span class="stat-label">Lighthouse</span></div>
                     </div>
-                    <p class="project-desc mb-0">Implemented code splitting, lazy loading, image optimization, and critical rendering path optimization. Achieved 100 Lighthouse score across all metrics.</p>
-                </div>
-            </div>
-
-            <!-- NEW: Real-time Trading Engine -->
-            <div class="project-card featured reveal">
-                <div>
-                    <div class="project-meta">
-                        <span class="project-tag">Fintech · Systems</span>
-                        <div class="project-links"><a href="https://github.com/YuvanChaudary/Smart-Settle" target="_blank"
-                                rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
-                    </div>
-                    <h3 class="project-title">SmartSettle — Order Routing Engine</h3>
-                    <p class="project-desc">Fintech payment routing and settlement optimizer with priority and deadline-aware scheduling. Real-time congestion prediction using ML models and adaptive queue management.
-                    </p>
-                    <div class="project-stack">
-                        <span class="stack-tag">Node.js</span><span class="stack-tag">TypeScript</span>
-                        <span class="stack-tag">Priority Queues</span><span class="stack-tag">Redis</span><span class="stack-tag">ML</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="project-stats">
-                        <div class="stat"><span class="stat-val">1K+</span><span class="stat-label">tx/sec peak</span></div>
-                        <div class="stat"><span class="stat-val">O(N log N)</span><span class="stat-label">efficiency</span>
-                        </div>
-                        <div class="stat"><span class="stat-val">$2M+</span><span class="stat-label">daily volume</span></div>
-                    </div>
-                    <p class="project-desc mb-0">Optimized settlement time by 40% through predictive congestion modeling. Built adaptive batching algorithm reducing transaction failures by 99.2%.</p>
+                    <p class="project-desc mb-0">Code splitting, lazy loading, image optimization, critical rendering path. 100 Lighthouse score across all metrics. Production deployment on Vercel with zero performance regressions.</p>
                 </div>
             </div>
 
@@ -212,23 +240,21 @@
 
             <div class="project-card reveal">
                 <div class="project-meta">
-                    <span class="project-tag amber">Fintech · Analytics</span>
-                    <div class="project-links">
-                        <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
-                            class="project-link">GitHub ↗</a>
-                    </div>
+                    <span class="project-tag amber">Fintech · Payments</span>
+                    <div class="project-links"><a href="https://github.com/YuvanChaudary/Smart-Settle" target="_blank"
+                            rel="noopener noreferrer" class="project-link">GitHub ↗</a></div>
                 </div>
-                <h3 class="project-title">Transaction Analytics Pipeline</h3>
-                <p class="project-desc">Real-time analytics pipeline processing 10M+ financial transactions daily. Built with Kafka, Spark, and time-series DB for fraud detection and compliance reporting.
+                <h3 class="project-title">SmartSettle</h3>
+                <p class="project-desc">Fintech payment routing and settlement optimizer with priority and deadline-aware scheduling. Real-time congestion prediction using ML models and adaptive queue management.
                 </p>
                 <div class="project-stats">
-                    <div class="stat"><span class="stat-val">10M+</span><span class="stat-label">txns/day</span></div>
-                    <div class="stat"><span class="stat-val">&lt;2s</span><span class="stat-label">latency</span>
+                    <div class="stat"><span class="stat-val">1K+</span><span class="stat-label">tx/sec peak</span></div>
+                    <div class="stat"><span class="stat-val">O(N log N)</span><span class="stat-label">efficiency</span>
                     </div>
                 </div>
                 <div class="project-stack">
-                    <span class="stack-tag">Apache Kafka</span><span class="stack-tag">Apache Spark</span>
-                    <span class="stack-tag">InfluxDB</span><span class="stack-tag">Python</span>
+                    <span class="stack-tag">Node.js</span><span class="stack-tag">TypeScript</span>
+                    <span class="stack-tag">Priority Queues</span><span class="stack-tag">Redis</span>
                 </div>
             </div>
 
@@ -258,7 +284,7 @@
                 <div class="project-meta">
                     <span class="project-tag blue">AI · AgriTech</span>
                     <div class="project-links">
-                        <a href="https://github.com/YuvanChaudary" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/YuvanChaudary/Agri-AI-Project" target="_blank" rel="noopener noreferrer"
                             class="project-link">GitHub ↗</a>
                     </div>
                 </div>
@@ -362,8 +388,8 @@
             </div>
             <div class="skill-group reveal">
                 <div class="skill-group-title">AI/ML & Systems</div>
-                <div class="skill-list"><span class="skill-pill">LLMs</span><span class="skill-pill">scikit-learn</span><span class="skill-pill">XGBoost</span><span
-                        class="skill-pill">Distributed Systems</span><span class="skill-pill">Performance Optimization</span></div>
+                <div class="skill-list"><span class="skill-pill">LLMs</span><span class="skill-pill">Agentic AI</span><span class="skill-pill">scikit-learn</span><span
+                        class="skill-pill">Temporal</span><span class="skill-pill">OPA</span><span class="skill-pill">Algorithms</span></div>
             </div>
         </div>
     </section>
