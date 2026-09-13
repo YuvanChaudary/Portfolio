@@ -1,4 +1,4 @@
-# Yuvan Chaudary — Systems & SDE-1 Portfolio (Google-Recruiter Optimized)
+# Yuvan Chaudary — Systems & SDE-1 Portfolio
 
 A high-performance, responsive developer portfolio showcasing engineering depth in **Distributed Systems, Agentic AI, Constraint Satisfaction Solvers, and Financial Sagas**. Optimized specifically for technical recruiters and hiring managers at Google, product companies, and AI infrastructure teams.
 
